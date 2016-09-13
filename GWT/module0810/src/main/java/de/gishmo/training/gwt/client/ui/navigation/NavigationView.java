@@ -1,0 +1,64 @@
+package de.gishmo.training.gwt.client.ui.navigation;
+
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.FlowPanel;
+
+import de.gishmo.training.gwt.client.resources.ApplicationConstants;
+import de.gishmo.training.gwt.client.resources.ApplicationCss;
+import de.gishmo.training.gwt.client.resources.ApplicationStyleFactory;
+import de.gishmo.training.gwt.client.ui.navigation.INavigationView.Presenter;
+import de.gishmo.training.gwt.client.widgets.ReverseComposite;
+
+public class NavigationView
+  extends ReverseComposite<Presenter>
+  implements INavigationView {
+
+  private ApplicationCss style;
+
+  private FlowPanel panel;
+
+  private Button searchButton;
+  private Button listButton;
+
+  public NavigationView() {
+    super();
+    this.style = ApplicationStyleFactory.get()
+                                        .getStyle();
+    createView();
+    bind();
+  }
+
+  private void createView() {
+    panel = new FlowPanel();
+    panel.addStyleName(style.navigationPanel());
+
+    searchButton = new Button(ApplicationConstants.CONSTANTS.searchFormButton());
+    searchButton.addStyleName(style.navigationButton());
+    panel.add(searchButton);
+
+    listButton = new Button(ApplicationConstants.CONSTANTS.listFormButton());
+    listButton.addStyleName(style.navigationButton());
+    panel.add(listButton);
+
+    initWidget(panel);
+  }
+
+  private void bind() {
+    searchButton.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+        getPresenter().doShowSearch();
+      }
+    });
+
+    listButton.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+        getPresenter().doShowList();
+      }
+    });
+
+  }
+}
