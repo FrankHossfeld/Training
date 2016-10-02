@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" output="test-classes" path="test"/>
+	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gin-2.1.2.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/guice-assistedinject-3.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-jackson-0.13.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jackson-annotations-2.6.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jackson-core-2.6.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jackson-databind-2.6.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/javax.inject.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/Module05Resources.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/mvp4g-1.5.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/restygwt-2.1.1.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Module0812DomainClient"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Module0812DomainDto"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>
