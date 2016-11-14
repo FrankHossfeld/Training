@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/gin-2.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/guice-assistedinject-3.0.jar"/>
+	<classpathentry kind="lib" path="lib/gwt-jackson-0.13.0.jar"/>
+	<classpathentry kind="lib" path="lib/gwt-servlet.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/javax.inject.jar"/>
+	<classpathentry kind="lib" path="lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/mvp4g-1.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/restygwt-2.1.1.jar"/>
+	<classpathentry kind="con" path="com.gwtplugins.gwt.eclipse.core.GWT_CONTAINER/GWT 2.8.0"/>
+	<classpathentry kind="lib" path="lib/Module0812Common.jar"/>
+	<classpathentry kind="lib" path="lib/Module0812DomainDto.jar"/>
+	<classpathentry kind="lib" path="lib/Module0812DomainClient.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

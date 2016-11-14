@@ -35,22 +35,6 @@ public interface ApplicationConstants
   String columnPlz();
   
   String columnCity();
-
-  String detailHeadline();
-  
-  String detailFirstName();
-  
-  String detailName();
-  
-  String detailStreet();
-  
-  String detailZip();
-  
-  String detailCity();
-
-  String saveButton();
-  
-  String revertButton();
   
   String statusSearch();
   

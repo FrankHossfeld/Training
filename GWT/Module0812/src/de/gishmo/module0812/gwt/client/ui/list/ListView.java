@@ -15,11 +15,11 @@ import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ScrollPanel;
 
+import de.gishmo.module0812.common.gwt.client.resource.ApplicationCss;
+import de.gishmo.module0812.common.gwt.client.resource.ApplicationStyleFactory;
+import de.gishmo.module0812.common.gwt.client.widget.ReverseComposite;
 import de.gishmo.module0812.domain.dto.shared.model.Person;
 import de.gishmo.module0812.gwt.client.resource.ApplicationConstants;
-import de.gishmo.module0812.gwt.client.resource.ApplicationCss;
-import de.gishmo.module0812.gwt.client.resource.ApplicationStyleFactory;
-import de.gishmo.module0812.gwt.client.widget.ReverseComposite;
 
 public class ListView
   extends ReverseComposite<IListView.Presenter>

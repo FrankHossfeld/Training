@@ -5,8 +5,8 @@ import javax.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.BasePresenter;
 
+import de.gishmo.module0812.common.gwt.client.model.ClientContext;
 import de.gishmo.module0812.gwt.client.Module0812EventBus;
-import de.gishmo.module0812.gwt.client.model.ClientContext;
 
 @Presenter(view = INavigationView.class)
 public class NavigationPresenter extends BasePresenter<INavigationView, Module0812EventBus>

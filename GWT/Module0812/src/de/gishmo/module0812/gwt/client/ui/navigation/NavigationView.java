@@ -5,10 +5,10 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
 
+import de.gishmo.module0812.common.gwt.client.resource.ApplicationCss;
+import de.gishmo.module0812.common.gwt.client.resource.ApplicationStyleFactory;
+import de.gishmo.module0812.common.gwt.client.widget.ReverseComposite;
 import de.gishmo.module0812.gwt.client.resource.ApplicationConstants;
-import de.gishmo.module0812.gwt.client.resource.ApplicationCss;
-import de.gishmo.module0812.gwt.client.resource.ApplicationStyleFactory;
-import de.gishmo.module0812.gwt.client.widget.ReverseComposite;
 
 public class NavigationView
   extends ReverseComposite<INavigationView.Presenter>

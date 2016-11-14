@@ -3,8 +3,8 @@ package de.gishmo.module0812.gwt.client;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Singleton;
 
-import de.gishmo.module0812.gwt.client.model.ClientContext;
-import de.gishmo.module0812.gwt.client.model.ClientContextProvider;
+import de.gishmo.module0812.common.gwt.client.model.ClientContext;
+import de.gishmo.module0812.common.gwt.client.model.ClientContextProvider;
 
 public class Module0810GinModule extends AbstractGinModule {
 

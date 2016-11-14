@@ -7,18 +7,23 @@ import com.mvp4g.client.annotation.Events;
 import com.mvp4g.client.annotation.Filters;
 import com.mvp4g.client.annotation.InitHistory;
 import com.mvp4g.client.annotation.Start;
+import com.mvp4g.client.annotation.module.ChildModule;
+import com.mvp4g.client.annotation.module.ChildModules;
 import com.mvp4g.client.event.EventBus;
 
 import de.gishmo.module0812.gwt.client.history.DefaultHistoryConverter;
-import de.gishmo.module0812.gwt.client.ui.detail.DetailPresenter;
 import de.gishmo.module0812.gwt.client.ui.list.ListPresenter;
 import de.gishmo.module0812.gwt.client.ui.navigation.NavigationPresenter;
 import de.gishmo.module0812.gwt.client.ui.search.SearchPresenter;
 import de.gishmo.module0812.gwt.client.ui.shell.ShellPresenter;
+import de.gishmo.module0812.submodule.gwt.client.Module0812SubModule;
 
 @Events(startPresenter = ShellPresenter.class,
         historyOnStart = true,
         ginModules = Module0810GinModule.class)
+@ChildModules({
+  @ChildModule(moduleClass = Module0812SubModule.class, async = true, autoDisplay = false)
+})
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = Module0812Logger.class)
 @Filters(filterClasses = Module0812EventFilter.class,
@@ -39,7 +44,7 @@ public interface Module0812EventBus extends EventBus {
   @Event(handlers = ShellPresenter.class)
   void setStatus(String status);
   
-  @Event(handlers = {DetailPresenter.class},
+  @Event(forwardToModules = {Module0812SubModule.class},
          historyConverter = DefaultHistoryConverter.class,
          navigationEvent = true)
   void gotoDetail(long id);

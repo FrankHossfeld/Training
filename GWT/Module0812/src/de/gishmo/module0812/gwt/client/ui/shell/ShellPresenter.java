@@ -7,8 +7,8 @@ import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.BasePresenter;
 
+import de.gishmo.module0812.common.gwt.client.model.ClientContext;
 import de.gishmo.module0812.gwt.client.Module0812EventBus;
-import de.gishmo.module0812.gwt.client.model.ClientContext;
 
 @Presenter(view = IShellView.class)
 public class ShellPresenter

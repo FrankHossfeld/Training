@@ -22,6 +22,8 @@
 
   <inherits name="de.gishmo.module0812.domain.dto.Dto" />
   <inherits name="de.gishmo.module0812.domain.service.Service" />
+  <inherits name="de.gishmo.module0812.submodule.gwt.Module0812SubModule"/>
+  <inherits name="de.gishmo.module0812.common.gwt.Module0812Common"/>
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='de.gishmo.module0812.gwt.client.Module0812'/>
@@ -29,10 +31,9 @@
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
   
+  <set-configuration-property name="CssResource.conversionMode" value="strict" />
+  
   <!-- Deferred binding rules -->
-  <replace-with class="de.gishmo.module0812.gwt.client.ui.detail.DetailView">
-    <when-type-is class="de.gishmo.module0812.gwt.client.ui.detail.IDetailView"/>
-  </replace-with>  
   <replace-with class="de.gishmo.module0812.gwt.client.ui.list.ListView">
     <when-type-is class="de.gishmo.module0812.gwt.client.ui.list.IListView"/>
   </replace-with>  

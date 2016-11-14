@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" output="test-classes" path="test"/>
-	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/gin-2.1.2.jar"/>
@@ -20,5 +19,9 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/restygwt-2.1.1.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Module0812DomainClient"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Module0812DomainDto"/>
+	<classpathentry kind="con" path="com.gwtplugins.gwt.eclipse.core.GWT_CONTAINER/GWT 2.8.0"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Module0812SubModule"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/Module0812Common.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/Module0812SubModule.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

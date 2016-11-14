@@ -6,8 +6,8 @@ import com.mvp4g.client.annotation.History;
 import com.mvp4g.client.annotation.History.HistoryConverterType;
 import com.mvp4g.client.history.HistoryConverter;
 
+import de.gishmo.module0812.common.gwt.client.model.ClientContext;
 import de.gishmo.module0812.gwt.client.Module0812EventBus;
-import de.gishmo.module0812.gwt.client.model.ClientContext;
 
 @History(type = HistoryConverterType.SIMPLE)
 public class DefaultHistoryConverter
