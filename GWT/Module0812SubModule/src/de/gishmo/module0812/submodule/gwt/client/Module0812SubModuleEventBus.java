@@ -13,10 +13,7 @@ import de.gishmo.module0812.submodule.gwt.client.ui.detail.DetailPresenter;
 
 @Events(startPresenter = NoStartPresenter.class,
         module = Module0812SubModule.class,
-        historyOnStart = false
-        
-//        , ginModules = Module0810GinModule.class
-        )
+        historyOnStart = false)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = Module0812SubModuleLogger.class)
 @Filters(filterClasses = Module0812SubModuleEventFilter.class,
@@ -40,3 +37,6 @@ public interface Module0812SubModuleEventBus extends EventBus {
   @Event(forwardToParent = true)
   void gotoSearch(String searchName, String searchOrt);
 }
+
+
+

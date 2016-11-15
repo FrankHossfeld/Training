@@ -7,3 +7,5 @@ import com.mvp4g.client.annotation.module.HistoryName;
 public interface Module0812SubModule
   extends Mvp4gModule {
 }
+
+
