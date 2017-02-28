@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.fusesource.restygwt.client.Method;
 import org.fusesource.restygwt.client.MethodCallback;
 
+import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.Window;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.history.NavigationConfirmationInterface;
@@ -13,10 +14,10 @@ import com.mvp4g.client.presenter.BasePresenter;
 
 import de.gishmo.module0812.common.gwt.client.model.ClientContext;
 import de.gishmo.module0812.domain.dto.shared.model.Person;
-import de.gishmo.module0812.domain.dto.shared.transport.ReturnCode;
 import de.gishmo.module0812.domain.dto.shared.transport.response.PersonGetResponse;
 import de.gishmo.module0812.domain.dto.shared.transport.response.PersonUpdateResponse;
 import de.gishmo.module0812.domain.service.client.Services;
+import de.gishmo.module0812.domain.service.client.utils.ResponseHandler;
 import de.gishmo.module0812.submodule.gwt.client.Module0812SubModuleEventBus;
 import de.gishmo.module0812.submodule.gwt.client.resources.DetailConstants;
 
@@ -45,17 +46,20 @@ public class DetailPresenter extends BasePresenter<IDetailView, Module0812SubMod
 
       @Override
       public void onSuccess(final Method method, PersonUpdateResponse response) {
-        if (response == null) {
-          Window.alert("Response is null");
-        } else if (ReturnCode.OK.equals(response.getStatus().getReturncode())) {
-          if (clientContext.getPersonSearch() == null) {
-            eventBus.gotoSearch("", "");
-          } else {
-            eventBus.gotoList(clientContext.getPersonSearch().getName(), clientContext.getPersonSearch().getCity());
+        ResponseHandler.builder().callingClass(DetailPresenter.class)
+        .callingMethod("doUpdate")
+        .response(response)
+        .responseMethod(method)
+        .executeIfStatuscodeIsOk(new Command() {
+          @Override
+          public void execute() {
+            if (clientContext.getPersonSearch() == null) {
+              eventBus.gotoSearch("", "");
+            } else {
+              eventBus.gotoList(clientContext.getPersonSearch().getName(), clientContext.getPersonSearch().getCity());
+            }
           }
-        } else {
-          Window.alert("ReturnCode is not OK");
-        }
+        }).build().handle();
       }
     });
   }
@@ -71,15 +75,18 @@ public class DetailPresenter extends BasePresenter<IDetailView, Module0812SubMod
 
         @Override
         public void onSuccess(final Method method, final PersonGetResponse response) {
-          if (response == null) {
-            Window.alert("Response is null");
-          } else if (ReturnCode.OK.equals(response.getStatus().getReturncode())) {
-            view.setUpData(response.getPerson());
-            eventBus.setContent(view.asWidget());
-            eventBus.setStatus(DetailConstants.CONSTANTS.statusDetail());
-          } else {
-            Window.alert("ReturnCode is not OK");
-          }
+          ResponseHandler.builder().callingClass(DetailPresenter.class)
+          .callingMethod("onGotoDetail")
+          .response(response)
+          .responseMethod(method)
+          .executeIfStatuscodeIsOk(new Command() {
+            @Override
+            public void execute() {
+              view.setUpData(response.getPerson());
+              eventBus.setContent(view.asWidget());
+              eventBus.setStatus(DetailConstants.CONSTANTS.statusDetail());
+            }
+          }).build().handle();
         }
       });
   }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <jardesc>
     <jar path="Module0812DomainDto/dist/Module0812DomainDto.jar"/>
-    <options buildIfNeeded="true" compress="true" descriptionLocation="/Module0812DomainDto/Module0812DomainDto.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/Module0812DomainDto/Module0812DomainDto.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
     <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
@@ -11,6 +11,11 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <file path="/Module0812DomainDto/.project"/>
+        <file path="/Module0812DomainDto/.classpath"/>
+        <file path="/Module0812DomainDto/.DS_Store"/>
+        <file path="/Module0812DomainDto/Module0812DomainDto.jardesc"/>
         <javaElement handleIdentifier="=Module0812DomainDto/src"/>
+        <file path="/Module0812DomainDto/.gitignore"/>
     </selectedElements>
 </jardesc>

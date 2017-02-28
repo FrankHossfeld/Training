@@ -8,7 +8,7 @@
 	<classpathentry kind="lib" path="libs/jackson-databind-2.6.0.jar"/>
 	<classpathentry kind="lib" path="libs/jsr311-api-1.1.1.jar"/>
 	<classpathentry kind="lib" path="libs/restygwt-2.1.1.jar"/>
-	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Module0812DomainDto"/>
+	<classpathentry kind="con" path="com.gwtplugins.gwt.eclipse.core.GWT_CONTAINER/GWT 2.8.0"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

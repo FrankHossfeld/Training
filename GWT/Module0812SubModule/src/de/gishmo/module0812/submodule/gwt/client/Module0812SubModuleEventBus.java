@@ -13,6 +13,7 @@ import de.gishmo.module0812.submodule.gwt.client.ui.detail.DetailPresenter;
 
 @Events(startPresenter = NoStartPresenter.class,
         module = Module0812SubModule.class,
+        ginModules = Module0812SubGinModule.class,
         historyOnStart = false)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = Module0812SubModuleLogger.class)

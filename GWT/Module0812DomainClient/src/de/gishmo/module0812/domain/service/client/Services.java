@@ -6,6 +6,7 @@ import org.fusesource.restygwt.client.RestServiceProxy;
 
 import com.google.gwt.core.client.GWT;
 
+import de.gishmo.module0812.domain.service.client.dto.ExceptionInfoService;
 import de.gishmo.module0812.domain.service.client.dto.PersonService;
 
 
@@ -16,6 +17,7 @@ public class Services {
   private String   path;
 
   /* Services */
+  private ExceptionInfoService exceptionInfoService;
   private PersonService PersonService;
 
   private Services() {
@@ -23,6 +25,9 @@ public class Services {
     Defaults.setDateFormat(null);
     // initialize default variable
     String moduleName = GWT.getModuleName();
+    GWT.log("getHostPageBaseURL >>" + GWT.getHostPageBaseURL() + "<<");
+    GWT.log("getModuleBaseForStaticFiles >>" + GWT.getModuleBaseForStaticFiles() + "<<");
+    GWT.log("getModuleBaseURL >>" + GWT.getModuleBaseURL() + "<<");
     path = GWT.getModuleBaseURL()
               .substring(0,
                          GWT.getModuleBaseURL()
@@ -44,6 +49,14 @@ public class Services {
       ((RestServiceProxy) PersonService).setResource(getResource("Person"));
     }
     return PersonService;
+  }
+  
+  public ExceptionInfoService getExceptionInfoService() {
+    if (exceptionInfoService == null) {
+      exceptionInfoService = GWT.create(ExceptionInfoService.class);
+      ((RestServiceProxy) exceptionInfoService).setResource(getResource("ExceptionInfo"));
+    }
+    return exceptionInfoService;
   }
 
   private Resource getResource(String resource) {

@@ -1,5 +1,8 @@
 package de.gishmo.module0812.domain.dto.shared.transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -35,14 +38,14 @@ public class Status
   /* Returncode des Calls */
   private ReturnCode      returncode;
   /* Liste der fachlichen Meldungen */
-//  private List<GMessage> meldungenFachlich;
+  private List<String> meldungenFachlich;
   /* Technische Fehlermeildung */
   private String          meldungTechnisch;
 
   public Status() {
     super();
     this.returncode = ReturnCode.OK;
-//    this.meldungenFachlich = new ArrayList<>();
+    this.meldungenFachlich = new ArrayList<>();
     this.meldungTechnisch = null;
   }
 
@@ -53,24 +56,18 @@ public class Status
   public void setReturncode(ReturnCode returncode) {
     this.returncode = returncode;
   }
-//
-//  public void add(GsMessage meldungFachlich) {
-//    if (meldungFachlich != null) {
-//      this.returncode = ReturnCode.FACHLICHE_MELDUNGEN;
-//    }
-//    this.meldungenFachlich.add(meldungFachlich);
-//  }
-//
-//  public List<GsMessage> getMeldungenFachlich() {
-//    return meldungenFachlich;
-//  }
-//
-//  public void setMeldungenFachlich(List<GsMessage> meldungenFachlich) {
-//    if (meldungenFachlich != null && meldungenFachlich.size() > 0) {
-//      this.returncode = ReturnCode.FACHLICHE_MELDUNGEN;
-//    }
-//    this.meldungenFachlich = meldungenFachlich;
-//  }
+
+  public void add(String meldungFachlich) {
+    this.meldungenFachlich.add(meldungFachlich);
+  }
+
+  public List<String> getMeldungenFachlich() {
+    return meldungenFachlich;
+  }
+
+  public void setMeldungenFachlich(List<String> meldungenFachlich) {
+    this.meldungenFachlich = meldungenFachlich;
+  }
 
   public String getMeldungTechnisch() {
     return meldungTechnisch;

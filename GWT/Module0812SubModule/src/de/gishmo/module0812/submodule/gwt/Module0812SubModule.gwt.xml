@@ -16,6 +16,7 @@
   <inherits name="de.gishmo.module0812.domain.service.Service" />
 
   <!-- Specify the app entry point class.                         -->
+  <entry-point class="de.gishmo.module0812.submodule.gwt.client.MyEntryPoint"/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>

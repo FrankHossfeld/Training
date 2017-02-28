@@ -20,9 +20,11 @@ import de.gishmo.module0812.submodule.gwt.client.Module0812SubModule;
 
 @Events(startPresenter = ShellPresenter.class,
         historyOnStart = true,
-        ginModules = Module0810GinModule.class)
+        ginModules = Module0812GinModule.class)
 @ChildModules({
-  @ChildModule(moduleClass = Module0812SubModule.class, async = true, autoDisplay = false)
+  @ChildModule(moduleClass = Module0812SubModule.class, 
+               async = true, 
+               autoDisplay = false)
 })
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = Module0812Logger.class)
@@ -64,3 +66,5 @@ public interface Module0812EventBus extends EventBus {
          historyConverter = DefaultHistoryConverter.class)
   void gotoSearch(String searchName, String searchOrt);
 }
+
+

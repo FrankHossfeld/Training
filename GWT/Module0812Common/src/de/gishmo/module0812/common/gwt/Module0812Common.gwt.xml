@@ -12,6 +12,7 @@
   <!-- Other module inherits                                      -->
   <inherits name='com.mvp4g.Mvp4gModule'/>
   <inherits name="de.gishmo.module0812.domain.dto.Dto" />
+  <inherits name="de.gishmo.module0812.domain.service.Service" />
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>

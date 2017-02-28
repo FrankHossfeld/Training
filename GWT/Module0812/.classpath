@@ -23,5 +23,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/Module0812SubModule"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/Module0812Common.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/Module0812SubModule.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/Module0812DomainClient.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

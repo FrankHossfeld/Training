@@ -13,6 +13,8 @@
   <inherits name="de.gishmo.module0812.domain.dto.Dto"/>
   <inherits name="org.fusesource.restygwt.RestyGWT"/>
 
+  <!-- Specify the app entry point class.                         -->
+
   <!-- Specify the paths for translatable code                    -->
   <source path="client"/>
   

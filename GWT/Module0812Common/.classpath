@@ -11,5 +11,12 @@
 	<classpathentry kind="lib" path="lib/mvp4g-1.5.0.jar"/>
 	<classpathentry kind="lib" path="lib/javax.inject.jar"/>
 	<classpathentry kind="lib" path="lib/Module0812DomainDto.jar"/>
+	<classpathentry kind="lib" path="lib/Module0812DomainClient.jar"/>
+	<classpathentry kind="lib" path="lib/gwt-jackson-0.13.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/restygwt-2.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
