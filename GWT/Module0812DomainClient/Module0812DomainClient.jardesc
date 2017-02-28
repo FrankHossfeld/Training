@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="Module0812DomainClient/dist/Module0812DomainClient.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/Module0812DomainClient/Module0812DomainClient.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <javaElement handleIdentifier="=Module0812DomainClient/src"/>
+    </selectedElements>
+</jardesc>
