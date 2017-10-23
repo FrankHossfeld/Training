@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+.headerPanel {
+    border-bottom: 1px solid black;
+}
+
+.header {
+    margin: 12px;
+}
+
+.footerLabel {
+    margin: 12px;
+}
+
+.footerPanel {
+    border-top: 1px solid black;
+}
+
+.navigationButton {
+    width: 188px;
+    height: 36px;
+    margin: 6px;
+    background-color: grey;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: 2px solid darkgrey;
+    margin: 12px;
+}
+
+.navigationPanel {
+    border-right: 1px solid black;
+}
+
+.resultPanel {
+    width: 100%;
+}
+
+.searchPanel {
+    width: 100%;
+}
+
+.searchPanelButtonBar {
+    text-align: right;
+    width: 100%;
+    float: left;
+}
+
+.headline {
+    font-family: arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4200fe;
+    margin: 6px;
+}
+
+.button {
+    width: 112px;
+    margin: 6px;
+}
