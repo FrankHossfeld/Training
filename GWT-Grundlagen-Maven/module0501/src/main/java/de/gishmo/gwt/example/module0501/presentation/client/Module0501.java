@@ -1,14 +1,14 @@
-package de.gishmo.gwt.example.module0701.presentation.client;
+package de.gishmo.gwt.example.module0501.presentation.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
-import de.gishmo.gwt.example.module0701.communication.client.PersonService;
-import de.gishmo.gwt.example.module0701.communication.client.PersonServiceAsync;
-import de.gishmo.gwt.example.module0701.communication.shared.dto.Person;
-import de.gishmo.gwt.example.module0701.communication.shared.exception.PersonNotFoundException;
+import de.gishmo.gwt.example.module0501.communication.client.PersonService;
+import de.gishmo.gwt.example.module0501.communication.client.PersonServiceAsync;
+import de.gishmo.gwt.example.module0501.communication.shared.dto.Person;
+import de.gishmo.gwt.example.module0501.communication.shared.exception.PersonNotFoundException;
 
 import java.util.List;
 

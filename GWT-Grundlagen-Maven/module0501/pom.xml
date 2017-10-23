@@ -92,9 +92,9 @@
         </executions>
         <configuration>
             <classpathScope>compile</classpathScope>
-            <moduleName>de.gishmo.gwt.example.module0701.presentation.Module0501</moduleName>
+            <moduleName>de.gishmo.gwt.example.module0501.presentation.Module0501</moduleName>
             <moduleShortName>Module0501</moduleShortName>
-            <modules>de.gishmo.gwt.example.module0701.presentation.Module0501</modules>
+            <modules>de.gishmo.gwt.example.module0501.presentation.Module0501</modules>
             <failOnError>true</failOnError>
             <!-- GWT 2.8 requires 1.8, hence define sourceLevel here if you use
              a different source language for java compilation -->

@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0701.communication.shared.dto;
+package de.gishmo.gwt.example.module0501.communication.shared.dto;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 

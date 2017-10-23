@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0701.client;
+package de.gishmo.gwt.example.module0501.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.dom.client.ClickEvent;

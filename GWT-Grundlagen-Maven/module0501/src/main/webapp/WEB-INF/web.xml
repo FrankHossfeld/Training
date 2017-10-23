@@ -8,7 +8,7 @@
   <!-- Servlets -->
  <servlet>
     <servlet-name>personServlet</servlet-name>
-    <servlet-class>de.gishmo.gwt.example.module0701.communication.server.PersonServiceImpl</servlet-class>
+    <servlet-class>de.gishmo.gwt.example.module0501.communication.server.PersonServiceImpl</servlet-class>
   </servlet>
 
   <servlet-mapping>

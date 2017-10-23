@@ -1,7 +1,7 @@
-package de.gishmo.gwt.example.module0701.communication.client;
+package de.gishmo.gwt.example.module0501.communication.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import de.gishmo.gwt.example.module0701.communication.shared.dto.Person;
+import de.gishmo.gwt.example.module0501.communication.shared.dto.Person;
 
 import java.util.List;
 

@@ -21,7 +21,7 @@
   <inherits name='de.gishmo.gwt.example.module0501.communication.ModulePerson' />
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='de.gishmo.gwt.example.module0701.presentation.client.Module0501'/>
+  <entry-point class='de.gishmo.gwt.example.module0501.presentation.client.Module0501'/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>

@@ -1,9 +1,9 @@
-package de.gishmo.gwt.example.module0701.communication.client;
+package de.gishmo.gwt.example.module0501.communication.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-import de.gishmo.gwt.example.module0701.communication.shared.dto.Person;
-import de.gishmo.gwt.example.module0701.communication.shared.exception.PersonNotFoundException;
+import de.gishmo.gwt.example.module0501.communication.shared.dto.Person;
+import de.gishmo.gwt.example.module0501.communication.shared.exception.PersonNotFoundException;
 
 import java.util.List;
 
