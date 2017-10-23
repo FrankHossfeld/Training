@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+
+.headerPanel {
+	border-bottom: 1px solid black;
+}
+
+.header {
+	margin: 12px;
+}
+
+.footerLabel {
+	margin: 12px;
+}
+
+.footerPanel {
+	border-top: 1px solid black;
+}
