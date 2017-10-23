@@ -1,12 +1,11 @@
-package de.gishmo.gwt.example.module0711.client;
-
+package de.gishmo.gwt.example.module0712.client;
 
 import com.google.gwt.cell.client.Cell;
 import com.google.gwt.cell.client.ClickableTextCell;
 import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.cell.client.TextCell;
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -21,9 +20,9 @@ import de.gishmo.gwt.example.module0503.client.PersonServiceAsync;
 import de.gishmo.gwt.example.module0503.shared.dto.Person;
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
 import de.gishmo.gwt.example.module0707.client.widgets.TextField;
-import de.gishmo.gwt.example.module0711.client.resources.ApplicationConstants;
-import de.gishmo.gwt.example.module0711.client.resources.ApplicationCss;
-import de.gishmo.gwt.example.module0711.client.resources.ImageResources;
+import de.gishmo.gwt.example.module0712.client.resources.ApplicationConstants;
+import de.gishmo.gwt.example.module0712.client.resources.ApplicationCss;
+import de.gishmo.gwt.example.module0712.client.resources.ImageResources;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,13 +30,12 @@ import java.util.List;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Module0711
+public class Module0712
   implements EntryPoint {
 
   private final static String SEARCH_FORM = "searchForm";
   private final static String RESULT_LIST = "resultList";
-  // TODO
-//  private final static String DETAIL_FORM = "detailForm";
+  private final static String DETAIL_FORM = "detailForm";
   private PersonServiceAsync service = GWT.create(PersonService.class);
   /* application */
   private ApplicationCss    style;
@@ -53,6 +51,18 @@ public class Module0711
   private ScrollPanel       resultScrollPanel;
   private FlowPanel         resultPanel;
   private CellTable<Person> resultTable;
+  /* detail */
+  private ScrollPanel       detailScrollPanel;
+  private FlowPanel         detailPanel;
+  private TextField   detailFirstName;
+  private TextField   detailName;
+  private TextField   detailStreet;
+  private TextField   detailZip;
+  private TextField   detailCity;
+  private Button      saveButton;
+  private Button      revertButton;
+  /* currently selected person */
+  private Person person;
 
   /**
    * This is the entry point method.
@@ -65,11 +75,12 @@ public class Module0711
     createShell();
     createSearchForm();
     createResultList();
+    createDetailForm();
 
     RootLayoutPanel.get()
                    .add(shell);
 
-    setCenter(Module0711.SEARCH_FORM);
+    setCenter(Module0712.SEARCH_FORM);
   }
 
   private void createShell() {
@@ -125,13 +136,13 @@ public class Module0711
                       @Override
                       public void onFailure(Throwable caught) {
                         Window.alert("PANIC!!!!!");
-                      }
-
-                      @Override
+                      }                      @Override
                       public void onSuccess(List<Person> result) {
                         resultTable.setRowData(result);
-                        setCenter(Module0711.RESULT_LIST);
+                        setCenter(Module0712.RESULT_LIST);
                       }
+
+
                     });
       }
     });
@@ -175,7 +186,21 @@ public class Module0711
                                                     public void update(int index,
                                                                        Person object,
                                                                        String value) {
-                                                      Window.alert("open detail form");
+                                                      service.get(object.getId(),
+                                                                  new AsyncCallback<Person>() {
+                                                                    @Override
+                                                                    public void onFailure(Throwable caught) {
+                                                                      Window.alert("PANIC!!!!");
+                                                                    }
+
+                                                                    @Override
+                                                                    public void onSuccess(Person result) {
+                                                                      person = result;
+                                                                      clearDetailForm();
+                                                                      setDetailForm();
+                                                                      setCenter(Module0712.DETAIL_FORM);
+                                                                    }
+                                                                  });
                                                     }
                                                   });
 
@@ -227,6 +252,82 @@ public class Module0711
     resetTable();
   }
 
+  private void createDetailForm() {
+    detailScrollPanel = new ScrollPanel();
+
+    detailPanel = new FlowPanel();
+    detailPanel.addStyleName(style.detailPanel());
+    detailScrollPanel.add(detailPanel);
+
+    Label headline = new Label(ApplicationConstants.CONSTANTS.detailHeadline());
+    headline.addStyleName(style.headline());
+    detailPanel.add(headline);
+
+    detailFirstName = new TextField(ApplicationConstants.CONSTANTS.detailFirstName());
+    detailPanel.add(detailFirstName);
+
+    detailName = new TextField(ApplicationConstants.CONSTANTS.detailName());
+    detailPanel.add(detailName);
+
+    detailStreet = new TextField(ApplicationConstants.CONSTANTS.detailStreet());
+    detailPanel.add(detailStreet);
+
+    detailZip = new TextField(ApplicationConstants.CONSTANTS.detailZip());
+    detailPanel.add(detailZip);
+
+    detailCity = new TextField(ApplicationConstants.CONSTANTS.detailCity());
+    detailPanel.add(detailCity);
+
+    FlowPanel buttonBar = new FlowPanel();
+    buttonBar.addStyleName(style.searchPanelButtonBar());
+    detailPanel.add(buttonBar);
+
+    saveButton = new Button(ApplicationConstants.CONSTANTS.saveButton());
+    saveButton.addStyleName(style.button());
+    buttonBar.add(saveButton);
+    saveButton.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+        updateDetailForm();
+        service.update(person,
+                       new AsyncCallback<Void>() {
+                         @Override
+                         public void onFailure(Throwable caught) {
+                           Window.alert("PANIC!!!!");
+                         }
+
+                         @Override
+                         public void onSuccess(Void result) {
+                           service.get(new PersonSearch(searchName.getText(),
+                                                        searchCity.getText()),
+                                       new AsyncCallback<List<Person>>() {
+                                         @Override
+                                         public void onFailure(Throwable caught) {
+                                           Window.alert("PANIC!!!!");
+                                         }
+
+                                         @Override
+                                         public void onSuccess(List<Person> result) {
+                                           resultTable.setRowData(result);
+                                           setCenter(Module0712.RESULT_LIST);
+                                         }
+                                       });
+                         }
+                       });
+      }
+    });
+
+    revertButton = new Button(ApplicationConstants.CONSTANTS.revertButton());
+    revertButton.addStyleName(style.button());
+    buttonBar.add(revertButton);
+    revertButton.addClickHandler(new ClickHandler() {
+      @Override
+      public void onClick(ClickEvent event) {
+        setCenter(Module0712.RESULT_LIST);
+      }
+    });
+  }
+
   private void setCenter(String requestedWidet) {
     if (searchScrollPanel.getParent() != null) {
       searchScrollPanel.removeFromParent();
@@ -234,11 +335,16 @@ public class Module0711
     if (resultScrollPanel.getParent() != null) {
       resultScrollPanel.removeFromParent();
     }
+    if (detailScrollPanel.getParent() != null) {
+      detailScrollPanel.removeFromParent();
+    }
 
-    if (requestedWidet.equals(Module0711.SEARCH_FORM)) {
+    if (requestedWidet.equals(Module0712.SEARCH_FORM)) {
       shell.add(searchScrollPanel);
-    } else if (requestedWidet.equals(Module0711.RESULT_LIST)) {
+    } else if (requestedWidet.equals(Module0712.RESULT_LIST)) {
       shell.add(resultScrollPanel);
+    } else if (requestedWidet.equals(Module0712.DETAIL_FORM)) {
+      shell.add(detailScrollPanel);
     }
   }
 
@@ -273,7 +379,7 @@ public class Module0711
     searchButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
-        setCenter(Module0711.SEARCH_FORM);
+        setCenter(Module0712.SEARCH_FORM);
       }
     });
     panel.add(searchButton);
@@ -283,7 +389,7 @@ public class Module0711
     listButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
-        setCenter(Module0711.RESULT_LIST);
+        setCenter(Module0712.RESULT_LIST);
       }
     });
     panel.add(listButton);
@@ -322,6 +428,38 @@ public class Module0711
     resultTable.addColumn(column,
                           headerText);
     return column;
+  }
+
+  private void clearDetailForm() {
+    detailFirstName.setText("");
+    detailName.setText("");
+    detailStreet.setText("");
+    detailZip.setText("");
+    detailCity.setText("");
+  }
+
+  private void setDetailForm() {
+    if (person != null) {
+      detailFirstName.setText(person.getFirstName());
+      detailName.setText(person.getName());
+      detailStreet.setText(person.getAddress()
+                                 .getStreet());
+      detailZip.setText(person.getAddress()
+                              .getZip());
+      detailCity.setText(person.getAddress()
+                               .getCity());
+    }
+  }
+
+  private void updateDetailForm() {
+    person.setFirstName(detailFirstName.getText());
+    person.setName(detailName.getText());
+    person.getAddress()
+          .setStreet(detailStreet.getText());
+    person.getAddress()
+          .setZip(detailZip.getText());
+    person.getAddress()
+          .setCity(detailCity.getText());
   }
 
 //------------------------------------------------------------------------------
