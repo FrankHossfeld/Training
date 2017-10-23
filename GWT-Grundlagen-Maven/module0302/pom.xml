@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>de.gishmo.gwt.example</groupId>
-  <artifactId>module0301</artifactId>
+  <artifactId>module0302</artifactId>
   <version>1.0.0</version>
 
   <packaging>gwt-app</packaging>
@@ -92,9 +92,9 @@
         </executions>
         <configuration>
             <classpathScope>compile</classpathScope>
-            <moduleName>de.gishmo.gwt.example.module0301.Module0301</moduleName>
-            <moduleShortName>Module0301</moduleShortName>
-            <modules>de.gishmo.gwt.example.module0301.Module0301</modules>
+            <moduleName>de.gishmo.gwt.example.module0302.Module0302</moduleName>
+            <moduleShortName>Module0302</moduleShortName>
+            <modules>de.gishmo.gwt.example.module0302.Module0302</modules>
             <failOnError>true</failOnError>
             <!-- GWT 2.8 requires 1.8, hence define sourceLevel here if you use
              a different source language for java compilation -->
@@ -115,7 +115,7 @@
                 <arg>9876</arg>
             </devmodeArgs>
             <startupUrls>
-                <startupUrl>Module0301.html</startupUrl>
+                <startupUrl>Module0302.html</startupUrl>
             </startupUrls>
             <warDir>${project.basedir}/src/main/webapp</warDir>
             <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>

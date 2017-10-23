@@ -10,3 +10,17 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 .DS_Store
+target
+.idea
+*.iml
+module0301
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/module0302.nocache.js
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/gwt/clean/images/vborder.png
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/gwt/clean/images/corner.png
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/gwt/clean/images/thumb_horz.png
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/gwt/clean/images/circles.png
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/clear.cache.gif
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/gwt/clean/images/hborder.png
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/gwt/clean/clean.css
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/gwt/clean/clean_rtl.css
+/GWT-Grundlagen-Maven/module0302/src/main/webapp/module0302/gwt/clean/images/thumb_vertical.png
