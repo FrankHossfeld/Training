@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module040102.shared.exception;
+package de.gishmo.gwt.example.module0402.shared.exception;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
 

@@ -1,10 +1,10 @@
-package de.gishmo.gwt.example.module040102.server;
+package de.gishmo.gwt.example.module0402.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-import de.gishmo.gwt.example.module040102.client.services.PersonService;
-import de.gishmo.gwt.example.module040102.shared.dto.Address;
-import de.gishmo.gwt.example.module040102.shared.dto.Person;
-import de.gishmo.gwt.example.module040102.shared.exception.PersonNotFoundException;
+import de.gishmo.gwt.example.module0402.client.services.PersonService;
+import de.gishmo.gwt.example.module0402.shared.dto.Address;
+import de.gishmo.gwt.example.module0402.shared.dto.Person;
+import de.gishmo.gwt.example.module0402.shared.exception.PersonNotFoundException;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

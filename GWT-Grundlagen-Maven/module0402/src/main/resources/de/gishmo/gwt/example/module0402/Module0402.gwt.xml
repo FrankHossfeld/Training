@@ -5,7 +5,7 @@
 -->
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.8.2//EN"
   "http://google-web-toolkit.googlecode.com/svn/tags/2.8.2/distro-source/core/src/gwt-module.dtd">
-<module rename-to='module040102'>
+<module rename-to='module0402'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
 
@@ -18,9 +18,11 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
+  <inherits name="com.google.gwt.http.HTTP" />
+  <inherits name="com.google.web.bindery.autobean.AutoBean"/>
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='de.gishmo.gwt.example.module040102.client.Module040102'/>
+  <entry-point class='de.gishmo.gwt.example.module0402.client.Module0402'/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
