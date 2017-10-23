@@ -10,7 +10,7 @@ import java.util.List;
 @RemoteServiceRelativePath("person")
 public interface PersonService
   extends RemoteService {
-  
+
   Person get(long id)
     throws PersonNotFoundException;
 

@@ -1,7 +1,6 @@
 package de.gishmo.gwt.example.module0301.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
-
 import de.gishmo.gwt.example.module0301.client.GreetingService;
 import de.gishmo.gwt.example.module0301.shared.FieldVerifier;
 
@@ -23,7 +22,7 @@ public class GreetingServiceImpl
     }
 
     String serverInfo = getServletContext().getServerInfo();
-    String userAgent  = getThreadLocalRequest().getHeader("User-Agent");
+    String userAgent = getThreadLocalRequest().getHeader("User-Agent");
 
     // Escape data from the client to avoid cross-site script vulnerabilities.
     input = escapeHtml(input);
@@ -36,9 +35,7 @@ public class GreetingServiceImpl
    * Escape an html string. Escaping data received from the client helps to
    * prevent cross-site script vulnerabilities.
    *
-   * @param html
-   *   the html string to escape
-   *
+   * @param html the html string to escape
    * @return the escaped string
    */
   private String escapeHtml(String html) {

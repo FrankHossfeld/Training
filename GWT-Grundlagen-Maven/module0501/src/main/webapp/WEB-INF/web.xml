@@ -6,7 +6,7 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <!-- Servlets -->
- <servlet>
+  <servlet>
     <servlet-name>personServlet</servlet-name>
     <servlet-class>de.gishmo.gwt.example.module0501.communication.server.PersonServiceImpl</servlet-class>
   </servlet>
@@ -15,7 +15,7 @@
     <servlet-name>personServlet</servlet-name>
     <url-pattern>/module0501/person</url-pattern>
   </servlet-mapping>
-  
+
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Module0501.html</welcome-file>

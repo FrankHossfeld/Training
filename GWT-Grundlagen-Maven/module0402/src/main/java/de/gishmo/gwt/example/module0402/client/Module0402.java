@@ -16,27 +16,18 @@ import de.gishmo.gwt.example.module0402.shared.dto.PersonList;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Module0402 implements EntryPoint {
-  
-  interface MyBeanFactory 
-    extends AutoBeanFactory {
-    AutoBean<Address> address();
-    AutoBean<Person> person();
-    AutoBean<PersonList> result();
-  }
-  
-  private MyBeanFactory myBeanFactory = GWT.create(MyBeanFactory.class);
-  
-  
+public class Module0402
+  implements EntryPoint {
+
   /**
    * The message displayed to the user when the server cannot be reached or
    * returns an error.
    */
   private static final String SERVER_ERROR = "An error occurred while "
-      + "attempting to contact the server. Please check your network "
-      + "connection and try again.";
-
+                                             + "attempting to contact the server. Please check your network "
+                                             + "connection and try again.";
   private static final String JSON_URL = GWT.getModuleBaseURL() + "module0402?";
+  private MyBeanFactory myBeanFactory = GWT.create(MyBeanFactory.class);
 
   /**
    * This is the entry point method.
@@ -53,10 +44,14 @@ public class Module0402 implements EntryPoint {
 
     // Add the nameField and sendButton to the RootPanel
     // Use RootPanel.get() to get the entire body element
-    RootPanel.get("nameFieldContainer").add(idField);
-    RootPanel.get("sendButtonContainer").add(sendButton);
-    RootPanel.get("errorLabelContainer").add(errorLabel);
-    RootPanel.get("sendAllButtonContainer").add(sendAllButton);
+    RootPanel.get("nameFieldContainer")
+             .add(idField);
+    RootPanel.get("sendButtonContainer")
+             .add(sendButton);
+    RootPanel.get("errorLabelContainer")
+             .add(errorLabel);
+    RootPanel.get("sendAllButtonContainer")
+             .add(sendAllButton);
 
     // Create the popup dialog box
     final DialogBox dialogBox = new DialogBox();
@@ -64,7 +59,8 @@ public class Module0402 implements EntryPoint {
     dialogBox.setAnimationEnabled(true);
     final Button closeButton = new Button("Close");
     // We can set the id of a widget by accessing its Element
-    closeButton.getElement().setId("closeButton");
+    closeButton.getElement()
+               .setId("closeButton");
     final HTML serverResponseLabel = new HTML();
     final Label textToServerLabel = new Label();
     VerticalPanel dialogVPanel = new VerticalPanel();
@@ -78,23 +74,9 @@ public class Module0402 implements EntryPoint {
     dialogBox.setWidget(dialogVPanel);
 
     // Add a handler to close the DialogBox
-    closeButton.addClickHandler(new ClickHandler() {
-      public void onClick(ClickEvent event) {
-        dialogBox.hide();
-        sendButton.setEnabled(true);
-        sendAllButton.setEnabled(true);
-      }
-    });
-
-    // Create a handler for the sendButton and nameField
-    class MyHandler01 implements ClickHandler, KeyUpHandler {
-      /**
-       * Fired when the user clicks on the sendButton.
-       */
-      public void onClick(ClickEvent event) {
-        sendNameToServer();
-      }
-
+    closeButton.addClickHandler(new     class MyHandler01
+      implements ClickHandler,
+                 KeyUpHandler {
       /**
        * Fired when the user types in the nameField.
        */
@@ -102,7 +84,14 @@ public class Module0402 implements EntryPoint {
         if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
           sendNameToServer();
         }
+      }      /**
+       * Fired when the user clicks on the sendButton.
+       */
+      public void onClick(ClickEvent event) {
+        sendNameToServer();
       }
+
+
 
       /**
        * Send the name from the nameField to the server and wait for a response.
@@ -111,7 +100,8 @@ public class Module0402 implements EntryPoint {
         // First, we validate the input.
         errorLabel.setText("");
         String textToServer = idField.getText();
-        if (textToServer == null  || textToServer.trim().length() == 0) {
+        if (textToServer == null || textToServer.trim()
+                                                .length() == 0) {
           errorLabel.setText("Please enter an ID");
           return;
         }
@@ -130,48 +120,55 @@ public class Module0402 implements EntryPoint {
         // URL
         String url = JSON_URL + "fc=01&id=" + Long.toString(id);
         url = URL.encode(url);
-  
-        RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
+
+        RequestBuilder builder = new RequestBuilder(RequestBuilder.GET,
+                                                    url);
         try {
           @SuppressWarnings("unused")
-          Request request = builder.sendRequest(null, new RequestCallback() {
-            public void onError(Request request, Throwable exception) {
-              dialogBox.setText("Remote Procedure Call - Failure");
-              serverResponseLabel.addStyleName("serverResponseLabelError");
-              // best way to test an exception
-              try {
-                throw exception;
-              } catch (Exception e) {
-                serverResponseLabel.setHTML(SERVER_ERROR);
-              } catch (Throwable e) {
-                serverResponseLabel.setHTML(SERVER_ERROR);
-              }
-              dialogBox.center();
-              closeButton.setFocus(true);
-            }
-    
-            public void onResponseReceived(Request request, Response response) {
-              if (200 == response.getStatusCode()) {
-                GWT.log(response.getText());
-                dialogBox.setText("Remote Procedure Call");
-                serverResponseLabel.removeStyleName("serverResponseLabelError");
-                Person person = deserializePersonFromJSON(response.getText());
-                serverResponseLabel.setHTML("The name of the person you requested is: " + person.getFirstName() + " " + person.getName());
-              } else {
-                Window.alert("Couldn't retrieve JSON (" + response.getStatusText() + ")");
-              }
-              dialogBox.center();
-              closeButton.setFocus(true);
-           }
-          });
+          Request request = builder.sendRequest(null,
+                                                new RequestCallback() {
+                                                  public void onResponseReceived(Request request,
+                                                                                 Response response) {
+                                                    if (200 == response.getStatusCode()) {
+                                                      GWT.log(response.getText());
+                                                      dialogBox.setText("Remote Procedure Call");
+                                                      serverResponseLabel.removeStyleName("serverResponseLabelError");
+                                                      Person person = deserializePersonFromJSON(response.getText());
+                                                      serverResponseLabel.setHTML("The name of the person you requested is: " + person.getFirstName() + " " + person.getName());
+                                                    } else {
+                                                      Window.alert("Couldn't retrieve JSON (" + response.getStatusText() + ")");
+                                                    }
+                                                    dialogBox.center();
+                                                    closeButton.setFocus(true);
+                                                  }                                                  public void onError(Request request,
+                                                                      Throwable exception) {
+                                                    dialogBox.setText("Remote Procedure Call - Failure");
+                                                    serverResponseLabel.addStyleName("serverResponseLabelError");
+                                                    // best way to test an exception
+                                                    try {
+                                                      throw exception;
+                                                    } catch (Exception e) {
+                                                      serverResponseLabel.setHTML(SERVER_ERROR);
+                                                    } catch (Throwable e) {
+                                                      serverResponseLabel.setHTML(SERVER_ERROR);
+                                                    }
+                                                    dialogBox.center();
+                                                    closeButton.setFocus(true);
+                                                  }
+
+
+                                                });
         } catch (RequestException e) {
           Window.alert("Couldn't retrieve JSON");
         }
       }
-    }
+    });
 
     // Create a handler for the sendButton and nameField
-    class MyHandler02 implements ClickHandler, KeyUpHandler {
+
+    class MyHandler02
+      implements ClickHandler,
+                 KeyUpHandler {
       /**
        * Fired when the user clicks on the sendButton.
        */
@@ -198,47 +195,60 @@ public class Module0402 implements EntryPoint {
         // URL
         String url = JSON_URL + "fc=02";
         url = URL.encode(url);
-  
-        RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
+
+        RequestBuilder builder = new RequestBuilder(RequestBuilder.GET,
+                                                    url);
         try {
           @SuppressWarnings("unused")
-          Request request = builder.sendRequest(null, new RequestCallback() {
-            public void onError(Request request, Throwable exception) {
-              dialogBox.setText("Remote Procedure Call - Failure");
-              serverResponseLabel.addStyleName("serverResponseLabelError");
-              // best way to test an exception
-              try {
-                throw exception;
-              } catch (Exception e) {
-                serverResponseLabel.setHTML(SERVER_ERROR);
-              } catch (Throwable e) {
-                serverResponseLabel.setHTML(SERVER_ERROR);
-              }
-              dialogBox.center();
-              closeButton.setFocus(true);
-            }
-    
-            public void onResponseReceived(Request request, Response response) {
-              if (200 == response.getStatusCode()) {
-                GWT.log(response.getText());
-                dialogBox.setText("Remote Procedure Call");
-                serverResponseLabel.removeStyleName("serverResponseLabelError");
-                String html = "";
-                PersonList result = deserializePersonListFromJSON(response.getText());
-                for (Person person : result.getPersons()) {
-                  html += person.getFirstName() + " " + person.getName() + "<br>";
-                }
-                serverResponseLabel.setHTML(html);
-              } else {
-                Window.alert("Couldn't retrieve JSON (" + response.getStatusText() + ")");
-              }
-              dialogBox.center();
-              closeButton.setFocus(true);
-            }
-          });
+          Request request = builder.sendRequest(null,
+                                                new RequestCallback() {
+                                                  public void onError(Request request,
+                                                                      Throwable exception) {
+                                                    dialogBox.setText("Remote Procedure Call - Failure");
+                                                    serverResponseLabel.addStyleName("serverResponseLabelError");
+                                                    // best way to test an exception
+                                                    try {
+                                                      throw exception;
+                                                    } catch (Exception e) {
+                                                      serverResponseLabel.setHTML(SERVER_ERROR);
+                                                    } catch (Throwable e) {
+                                                      serverResponseLabel.setHTML(SERVER_ERROR);
+                                                    }
+                                                    dialogBox.center();
+                                                    closeButton.setFocus(true);
+                                                  }
+
+                                                  public void onResponseReceived(Request request,
+                                                                                 Response response) {
+                                                    if (200 == response.getStatusCode()) {
+                                                      GWT.log(response.getText());
+                                                      dialogBox.setText("Remote Procedure Call");
+                                                      serverResponseLabel.removeStyleName("serverResponseLabelError");
+                                                      String html = "";
+                                                      PersonList result = deserializePersonListFromJSON(response.getText());
+                                                      for (Person person : result.getPersons()) {
+                                                        html += person.getFirstName() + " " + person.getName() + "<br>";
+                                                      }
+                                                      serverResponseLabel.setHTML(html);
+                                                    } else {
+                                                      Window.alert("Couldn't retrieve JSON (" + response.getStatusText() + ")");
+                                                    }
+                                                    dialogBox.center();
+                                                    closeButton.setFocus(true);
+                                                  }
+                                                });
         } catch (RequestException e) {
           Window.alert("Couldn't retrieve JSON");
         }
+      }
+    }
+
+    // Create a handler for the sendButton and nameField
+ClickHandler() {
+      public void onClick(ClickEvent event) {
+        dialogBox.hide();
+        sendButton.setEnabled(true);
+        sendAllButton.setEnabled(true);
       }
     }
 
@@ -249,21 +259,34 @@ public class Module0402 implements EntryPoint {
     sendAllButton.addClickHandler(handler02);
   }
 
+  private Person deserializePersonFromJSON(String json) {
+    AutoBean<Person> bean = AutoBeanCodex.decode(myBeanFactory,
+                                                 Person.class,
+                                                 json);
+    return bean.as();
+  }
+
 //  private Person createPerson() {
 //    AutoBean<Person> person = myBeanFactory.person();
 //    return person.as();
 //  }
-  
-  private Person deserializePersonFromJSON(String json) {
-    AutoBean<Person> bean = AutoBeanCodex.decode(myBeanFactory, Person.class, json); 
-    return bean.as();
-  }
-  
+
   private PersonList deserializePersonListFromJSON(String json) {
-    AutoBean<PersonList> bean = AutoBeanCodex.decode(myBeanFactory, PersonList.class, json); 
+    AutoBean<PersonList> bean = AutoBeanCodex.decode(myBeanFactory,
+                                                     PersonList.class,
+                                                     json);
     return bean.as();
   }
-  
+
+  interface MyBeanFactory
+    extends AutoBeanFactory {
+    AutoBean<Address> address();
+
+    AutoBean<Person> person();
+
+    AutoBean<PersonList> result();
+  }
+
 //  private String serializeFromJSON(Person person) {
 //    AutoBean<Person> bean = AutoBeanUtils.getAutoBean(person);
 //    return AutoBeanCodex.encode(bean).getPayload();

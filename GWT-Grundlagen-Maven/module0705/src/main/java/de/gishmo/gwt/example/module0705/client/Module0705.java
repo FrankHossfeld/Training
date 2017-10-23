@@ -17,9 +17,10 @@ public class Module0705
    */
   public void onModuleLoad() {
     FlowPanel vp = new FlowPanel();
-    RootLayoutPanel.get().add(vp);
-    
+    RootLayoutPanel.get()
+                   .add(vp);
+
     vp.add(new TextField());
-    vp.add(new TextField("Test"));   
+    vp.add(new TextField("Test"));
   }
 }

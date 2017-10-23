@@ -19,31 +19,80 @@ public class PersonServiceImpl
   implements PersonService {
 
   private static Map<Long, Person> persons;
-  
+
   public void init(ServletConfig config)
     throws ServletException {
     super.init(config);
-    
+
     if (persons == null) {
       persons = new HashMap<Long, Person>();
       initList();
     }
   }
-  
+
   private void initList() {
-    Address address01 = new Address(1, "Evergreen Terrace", "7 42", "Springfield");
-    persons.put(new Long(1), new Person(1, "Simpson", "Homer", address01));
-    persons.put(new Long(2), new Person(2, "Simpson", "Marge", address01));
-    persons.put(new Long(3), new Person(3, "Simpson", "Bart", address01));
-    persons.put(new Long(4), new Person(4, "Simpson", "Maggie", address01));
-    persons.put(new Long(5), new Person(5, "Simpson", "Lisa", address01));
-    Address address02 = new Address(2, "Blumenweg Nr. 13", "", "Entenhausen");
-    persons.put(new Long(6), new Person(6, "Duck", "Donald", address02));
-    persons.put(new Long(7), new Person(7, "Duck", "Trick", address02));
-    persons.put(new Long(8), new Person(8, "Duck", "Tick", address02));
-    persons.put(new Long(9), new Person(9, "Duck", "Tack", address02));
-    Address address03 = new Address(2, "Am Goldberg Nr. 1", "", "Entenhausen");
-    persons.put(new Long(10), new Person(10, "Duck", "Dagobert", address03));
+    Address address01 = new Address(1,
+                                    "Evergreen Terrace",
+                                    "7 42",
+                                    "Springfield");
+    persons.put(new Long(1),
+                new Person(1,
+                           "Simpson",
+                           "Homer",
+                           address01));
+    persons.put(new Long(2),
+                new Person(2,
+                           "Simpson",
+                           "Marge",
+                           address01));
+    persons.put(new Long(3),
+                new Person(3,
+                           "Simpson",
+                           "Bart",
+                           address01));
+    persons.put(new Long(4),
+                new Person(4,
+                           "Simpson",
+                           "Maggie",
+                           address01));
+    persons.put(new Long(5),
+                new Person(5,
+                           "Simpson",
+                           "Lisa",
+                           address01));
+    Address address02 = new Address(2,
+                                    "Blumenweg Nr. 13",
+                                    "",
+                                    "Entenhausen");
+    persons.put(new Long(6),
+                new Person(6,
+                           "Duck",
+                           "Donald",
+                           address02));
+    persons.put(new Long(7),
+                new Person(7,
+                           "Duck",
+                           "Trick",
+                           address02));
+    persons.put(new Long(8),
+                new Person(8,
+                           "Duck",
+                           "Tick",
+                           address02));
+    persons.put(new Long(9),
+                new Person(9,
+                           "Duck",
+                           "Tack",
+                           address02));
+    Address address03 = new Address(2,
+                                    "Am Goldberg Nr. 1",
+                                    "",
+                                    "Entenhausen");
+    persons.put(new Long(10),
+                new Person(10,
+                           "Duck",
+                           "Dagobert",
+                           address03));
   }
 
   @Override
@@ -52,7 +101,7 @@ public class PersonServiceImpl
     if (persons.containsKey(new Long(id))) {
       return persons.get(id);
     } else {
-      throw new PersonNotFoundException("no data found for ID >>" + Long.toString(id) + "<<"); 
+      throw new PersonNotFoundException("no data found for ID >>" + Long.toString(id) + "<<");
     }
   }
 

@@ -5,6 +5,7 @@ import de.gishmo.gwt.example.module040101.shared.dto.Person;
 
 public interface PersonServiceAsync {
 
-  void get(long id, AsyncCallback<Person> callback);
+  void get(long id,
+           AsyncCallback<Person> callback);
 
 }

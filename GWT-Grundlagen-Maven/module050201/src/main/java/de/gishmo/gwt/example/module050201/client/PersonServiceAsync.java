@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface PersonServiceAsync {
 
-  void get(long id, AsyncCallback<Person> callback);
+  void get(long id,
+           AsyncCallback<Person> callback);
 
   void getAll(AsyncCallback<List<Person>> callback);
 

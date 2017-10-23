@@ -10,12 +10,12 @@
     <servlet-name>greetServlet</servlet-name>
     <servlet-class>de.gishmo.gwt.example.module0301.server.GreetingServiceImpl</servlet-class>
   </servlet>
-  
+
   <servlet-mapping>
     <servlet-name>greetServlet</servlet-name>
     <url-pattern>/module0301/greet</url-pattern>
   </servlet-mapping>
-  
+
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Module0301.html</welcome-file>

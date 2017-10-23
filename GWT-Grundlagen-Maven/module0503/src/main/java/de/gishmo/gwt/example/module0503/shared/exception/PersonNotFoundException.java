@@ -11,7 +11,7 @@ public class PersonNotFoundException
   @SuppressWarnings("unused")
   private PersonNotFoundException() {
   }
-  
+
   public PersonNotFoundException(String message) {
     super(message);
   }

@@ -7,14 +7,14 @@
 
   <!-- Servlets -->
   <servlet>
-	<servlet-name>modulePersonImpl</servlet-name>
-	<servlet-class>de.gishmo.gwt.example.module050201.server.PersonServiceImpl</servlet-class>
+    <servlet-name>modulePersonImpl</servlet-name>
+    <servlet-class>de.gishmo.gwt.example.module050201.server.PersonServiceImpl</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>modulePersonImpl</servlet-name>
-	<url-pattern>/module050202/person</url-pattern>
+    <url-pattern>/module050202/person</url-pattern>
   </servlet-mapping>
-	  
+
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Module050202.html</welcome-file>

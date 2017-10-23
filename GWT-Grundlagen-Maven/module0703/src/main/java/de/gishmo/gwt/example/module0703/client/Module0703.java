@@ -10,20 +10,21 @@ import com.google.gwt.user.client.ui.RootPanel;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Module0703 implements EntryPoint {
-  
+public class Module0703
+  implements EntryPoint {
+
   private DialogBox dialogBox;
- 
+
   /**
    * This is the entry point method.
    */
   public void onModuleLoad() {
     createDialogBox();
-    
+
     final Button showButton = new Button("show dialogbox");
     // We can add style names to widgets
     showButton.addStyleName("sendButton");
-    
+
     showButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
@@ -32,7 +33,8 @@ public class Module0703 implements EntryPoint {
     });
 
     // Use RootPanel.get() to get the entire body element
-    RootPanel.get().add(showButton);
+    RootPanel.get()
+             .add(showButton);
 
   }
 

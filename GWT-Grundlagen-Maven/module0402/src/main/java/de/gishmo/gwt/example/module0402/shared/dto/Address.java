@@ -3,7 +3,7 @@ package de.gishmo.gwt.example.module0402.shared.dto;
 public interface Address {
 
   String getStreet();
-  
+
   void setStreet(String street);
 
   String getZip();
@@ -17,5 +17,5 @@ public interface Address {
   long getId();
 
   void setId(long id);
-  
+
 }

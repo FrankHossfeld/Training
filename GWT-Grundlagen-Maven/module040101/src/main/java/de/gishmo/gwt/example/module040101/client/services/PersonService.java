@@ -8,7 +8,7 @@ import de.gishmo.gwt.example.module040101.shared.exception.PersonNotFoundExcepti
 @RemoteServiceRelativePath("person")
 public interface PersonService
   extends RemoteService {
-  
+
   Person get(long id)
     throws PersonNotFoundException;
 

@@ -4,22 +4,25 @@ import com.google.gwt.user.client.rpc.IsSerializable;
 
 public class Address
   implements IsSerializable {
-  
+
   private long id;
-  
+
   private String street;
   private String zip;
   private String city;
-  
+
   /* for serialization only */
   @SuppressWarnings("unused")
   private Address() {
     super();
   }
 
-  public Address(long id, String street, String zip, String city) {
+  public Address(long id,
+                 String street,
+                 String zip,
+                 String city) {
     super();
-  
+
     this.id = id;
     this.street = street;
     this.zip = zip;

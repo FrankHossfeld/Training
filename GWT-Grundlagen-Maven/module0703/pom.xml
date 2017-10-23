@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
@@ -91,38 +91,38 @@
           </execution>
         </executions>
         <configuration>
-            <classpathScope>compile</classpathScope>
-            <moduleName>de.gishmo.gwt.example.module0703.Module0703</moduleName>
-            <moduleShortName>Module0703</moduleShortName>
-            <modules>de.gishmo.gwt.example.module0703.Module0703</modules>
-            <failOnError>true</failOnError>
-            <!-- GWT 2.8 requires 1.8, hence define sourceLevel here if you use
-             a different source language for java compilation -->
-            <sourceLevel>1.8</sourceLevel>
-            <!-- Compiler configuration -->
-            <compilerArgs>
-                <!--Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile)-->
-                <arg>-compileReport</arg>
-                <arg>-XcompilerMetrics</arg>
-            </compilerArgs>
-            <logLevel>TRACE</logLevel>
-            <skipModule>true</skipModule>
-            <codeServerPort>9876</codeServerPort>
-            <devmodeArgs>
-                <arg>-port</arg>
-                <arg>8888</arg>
-                <arg>-codeServerPort</arg>
-                <arg>9876</arg>
-            </devmodeArgs>
-            <startupUrls>
-                <startupUrl>Module0703.html</startupUrl>
-            </startupUrls>
-            <warDir>${project.basedir}/src/main/webapp</warDir>
-            <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-            <systemProperties>
-                <gwt.persistentunitcachedir>${project.build.directory}/gwt/unitCache/</gwt.persistentunitcachedir>
-                <gwt.war.directory>${project.basedir}/src/main/webapp</gwt.war.directory>
-            </systemProperties>
+          <classpathScope>compile</classpathScope>
+          <moduleName>de.gishmo.gwt.example.module0703.Module0703</moduleName>
+          <moduleShortName>Module0703</moduleShortName>
+          <modules>de.gishmo.gwt.example.module0703.Module0703</modules>
+          <failOnError>true</failOnError>
+          <!-- GWT 2.8 requires 1.8, hence define sourceLevel here if you use
+           a different source language for java compilation -->
+          <sourceLevel>1.8</sourceLevel>
+          <!-- Compiler configuration -->
+          <compilerArgs>
+            <!--Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile)-->
+            <arg>-compileReport</arg>
+            <arg>-XcompilerMetrics</arg>
+          </compilerArgs>
+          <logLevel>TRACE</logLevel>
+          <skipModule>true</skipModule>
+          <codeServerPort>9876</codeServerPort>
+          <devmodeArgs>
+            <arg>-port</arg>
+            <arg>8888</arg>
+            <arg>-codeServerPort</arg>
+            <arg>9876</arg>
+          </devmodeArgs>
+          <startupUrls>
+            <startupUrl>Module0703.html</startupUrl>
+          </startupUrls>
+          <warDir>${project.basedir}/src/main/webapp</warDir>
+          <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+          <systemProperties>
+            <gwt.persistentunitcachedir>${project.build.directory}/gwt/unitCache/</gwt.persistentunitcachedir>
+            <gwt.war.directory>${project.basedir}/src/main/webapp</gwt.war.directory>
+          </systemProperties>
         </configuration>
       </plugin>
     </plugins>

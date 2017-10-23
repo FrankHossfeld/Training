@@ -4,9 +4,9 @@
               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5"
          xmlns="http://java.sun.com/xml/ns/javaee">
-  
+
   <!-- Default page to serve -->
- <servlet>
+  <servlet>
     <servlet-name>jsonStockData</servlet-name>
     <servlet-class>de.gishmo.gwt.example.module0402.server.JsonPersonService</servlet-class>
   </servlet>
@@ -15,7 +15,7 @@
     <servlet-name>jsonStockData</servlet-name>
     <url-pattern>/module0402/module0402</url-pattern>
   </servlet-mapping>
-  
+
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Module0402.html</welcome-file>

@@ -6,21 +6,24 @@ public class Person
   implements IsSerializable {
 
   private long id;
-  
+
   private String name;
   private String firstName;
-  
+
   private Address address;
-  
+
   /* for serialization only */
   @SuppressWarnings("unused")
   private Person() {
     super();
   }
 
-  public Person(long id, String name, String firstName, Address adress) {
+  public Person(long id,
+                String name,
+                String firstName,
+                Address adress) {
     super();
-    
+
     this.id = id;
     this.name = name;
     this.firstName = firstName;

@@ -12,15 +12,18 @@ import java.util.List;
 @RemoteServiceRelativePath("person")
 public interface PersonService
   extends RemoteService {
-  
-  Person get(long id) throws PersonNotFoundException;
-  
+
+  Person get(long id)
+    throws PersonNotFoundException;
+
   List<Person> getAll();
-  
+
   List<Person> get(PersonSearch search);
-  
-  void insert(Person person) throws PersonException;
-  
-  void update(Person person) throws PersonException; 
+
+  void insert(Person person)
+    throws PersonException;
+
+  void update(Person person)
+    throws PersonException;
 
 }

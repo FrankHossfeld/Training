@@ -11,7 +11,7 @@ public class PersonException
   @SuppressWarnings("unused")
   private PersonException() {
   }
-  
+
   public PersonException(String message) {
     super(message);
   }
