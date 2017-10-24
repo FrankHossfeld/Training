@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client;
+package de.gishmo.gwt.example.module0806.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.RootLayoutPanel;

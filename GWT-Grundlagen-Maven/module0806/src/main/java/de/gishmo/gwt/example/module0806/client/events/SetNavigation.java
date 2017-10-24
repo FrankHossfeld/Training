@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.events;
+package de.gishmo.gwt.example.module0806.client.events;
 
 import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;

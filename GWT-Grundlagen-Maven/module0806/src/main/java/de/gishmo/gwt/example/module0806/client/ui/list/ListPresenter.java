@@ -5,13 +5,13 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
 import de.gishmo.gwt.example.module0503.shared.dto.Person;
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
-import de.gishmo.gwt.example.module0809.client.ClientContext;
-import de.gishmo.gwt.example.module0809.client.events.SearchPersons;
-import de.gishmo.gwt.example.module0809.client.events.SetStatus;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationConstants;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationMessages;
+import de.gishmo.gwt.example.module0806.client.ClientContext;
+import de.gishmo.gwt.example.module0806.client.events.SearchPersons;
+import de.gishmo.gwt.example.module0806.client.events.SetStatus;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationConstants;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationMessages;
 import de.gishmo.gwt.example.module0809.client.ui.detail.DetailPlace;
-import de.gishmo.gwt.example.module0809.client.widgets.PresentsWidgets;
+import de.gishmo.gwt.example.module0806.client.widgets.PresentsWidgets;
 
 import java.util.List;
 

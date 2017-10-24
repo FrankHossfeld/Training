@@ -1,7 +1,7 @@
 package de.gishmo.gwt.example.module0809.client.ui.search;
 
 import com.google.gwt.user.client.ui.IsWidget;
-import de.gishmo.gwt.example.module0809.client.widgets.ReverseView;
+import de.gishmo.gwt.example.module0806.client.widgets.ReverseView;
 
 public interface ISearchView
   extends ReverseView<ISearchView.Presenter>,

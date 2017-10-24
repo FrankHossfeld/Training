@@ -8,8 +8,8 @@ import de.gishmo.gwt.example.module0503.client.PersonServiceAsync;
 import de.gishmo.gwt.example.module0503.shared.dto.Person;
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
 import de.gishmo.gwt.example.module0809.client.Module0809EventBus;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationConstants;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationMessages;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationConstants;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationMessages;
 
 import javax.inject.Inject;
 import java.util.List;

@@ -8,9 +8,9 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import de.gishmo.gwt.example.module0503.shared.dto.Person;
 import de.gishmo.gwt.example.module0707.client.widgets.TextField;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationConstants;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationCss;
-import de.gishmo.gwt.example.module0809.client.widgets.ReverseComposite;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationConstants;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationCss;
+import de.gishmo.gwt.example.module0806.client.widgets.ReverseComposite;
 
 public class DetailView
   extends ReverseComposite<IDetailView.Presenter>

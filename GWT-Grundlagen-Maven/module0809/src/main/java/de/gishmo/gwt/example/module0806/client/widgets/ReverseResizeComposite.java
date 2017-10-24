@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.widgets;
+package de.gishmo.gwt.example.module0806.client.widgets;
 
 
 import com.google.gwt.user.client.ui.ResizeComposite;

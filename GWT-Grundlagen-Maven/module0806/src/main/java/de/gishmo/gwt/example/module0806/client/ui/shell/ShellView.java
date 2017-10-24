@@ -6,10 +6,10 @@ import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.logical.shared.ResizeEvent;
 import com.google.gwt.event.logical.shared.ResizeHandler;
 import com.google.gwt.user.client.ui.*;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationConstants;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationCss;
-import de.gishmo.gwt.example.module0809.client.resources.ImageResources;
-import de.gishmo.gwt.example.module0809.client.widgets.ReverseComposite;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationConstants;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationCss;
+import de.gishmo.gwt.example.module0806.client.resources.ImageResources;
+import de.gishmo.gwt.example.module0806.client.widgets.ReverseComposite;
 
 public class ShellView
   extends ReverseComposite<IShellView.Presenter>

@@ -3,9 +3,9 @@ package de.gishmo.gwt.example.module0809.client.ui.shell;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
-import de.gishmo.gwt.example.module0809.client.ClientContext;
-import de.gishmo.gwt.example.module0809.client.events.SetNavigation;
-import de.gishmo.gwt.example.module0809.client.events.SetStatus;
+import de.gishmo.gwt.example.module0806.client.ClientContext;
+import de.gishmo.gwt.example.module0806.client.events.SetNavigation;
+import de.gishmo.gwt.example.module0806.client.events.SetStatus;
 
 public class ShellPresenter
   implements IShellView.Presenter,

@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client;
+package de.gishmo.gwt.example.module0806.client;
 
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.core.client.GWT;
@@ -14,11 +14,11 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.web.bindery.event.shared.UmbrellaException;
-import de.gishmo.gwt.example.module0809.client.activities.ApplicationActivityMapper;
-import de.gishmo.gwt.example.module0809.client.activities.ApplicationPlaceHistoryMapper;
-import de.gishmo.gwt.example.module0809.client.ui.navigation.NavigationPresenter;
-import de.gishmo.gwt.example.module0809.client.ui.search.SearchPlace;
-import de.gishmo.gwt.example.module0809.client.ui.shell.ShellPresenter;
+import de.gishmo.gwt.example.module0806.client.activities.ApplicationActivityMapper;
+import de.gishmo.gwt.example.module0806.client.activities.ApplicationPlaceHistoryMapper;
+import de.gishmo.gwt.example.module0806.client.ui.navigation.NavigationPresenter;
+import de.gishmo.gwt.example.module0806.client.ui.search.SearchPlace;
+import de.gishmo.gwt.example.module0806.client.ui.shell.ShellPresenter;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

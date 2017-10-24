@@ -2,7 +2,7 @@ package de.gishmo.gwt.example.module0809.client.ui.shell;
 
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
-import de.gishmo.gwt.example.module0809.client.widgets.ReverseView;
+import de.gishmo.gwt.example.module0806.client.widgets.ReverseView;
 
 public interface IShellView
   extends ReverseView<IShellView.Presenter>,

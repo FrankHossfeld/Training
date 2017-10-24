@@ -1,9 +1,9 @@
 package de.gishmo.gwt.example.module0809.client.ui.navigation;
 
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
-import de.gishmo.gwt.example.module0809.client.ClientContext;
-import de.gishmo.gwt.example.module0809.client.events.SearchPersons;
-import de.gishmo.gwt.example.module0809.client.events.SetNavigation;
+import de.gishmo.gwt.example.module0806.client.ClientContext;
+import de.gishmo.gwt.example.module0806.client.events.SearchPersons;
+import de.gishmo.gwt.example.module0806.client.events.SetNavigation;
 import de.gishmo.gwt.example.module0809.client.ui.list.ListPlace;
 import de.gishmo.gwt.example.module0809.client.ui.search.SearchPlace;
 

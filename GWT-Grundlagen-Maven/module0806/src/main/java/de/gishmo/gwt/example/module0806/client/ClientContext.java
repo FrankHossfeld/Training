@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client;
+package de.gishmo.gwt.example.module0806.client;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.place.shared.PlaceController;
@@ -7,7 +7,7 @@ import com.google.web.bindery.event.shared.EventBus;
 import de.gishmo.gwt.example.module0503.client.PersonService;
 import de.gishmo.gwt.example.module0503.client.PersonServiceAsync;
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
-import de.gishmo.gwt.example.module0809.client.resources.ApplicationCss;
+import de.gishmo.gwt.example.module0806.client.resources.ApplicationCss;
 
 public class ClientContext {
 

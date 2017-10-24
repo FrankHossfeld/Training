@@ -1,10 +1,10 @@
-package de.gishmo.gwt.example.module0809.client.activities;
+package de.gishmo.gwt.example.module0806.client.activities;
 
 import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.gwt.place.shared.WithTokenizers;
-import de.gishmo.gwt.example.module0809.client.ui.detail.DetailPlace;
-import de.gishmo.gwt.example.module0809.client.ui.list.ListPlace;
-import de.gishmo.gwt.example.module0809.client.ui.search.SearchPlace;
+import de.gishmo.gwt.example.module0806.client.ui.detail.DetailPlace;
+import de.gishmo.gwt.example.module0806.client.ui.list.ListPlace;
+import de.gishmo.gwt.example.module0806.client.ui.search.SearchPlace;
 
 /**
  * This interface is the hub of your application's navigation system. It links

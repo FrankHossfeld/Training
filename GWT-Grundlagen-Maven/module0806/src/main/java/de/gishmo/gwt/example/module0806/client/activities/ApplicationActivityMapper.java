@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.activities;
+package de.gishmo.gwt.example.module0806.client.activities;
 
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.activity.shared.Activity;
@@ -6,13 +6,13 @@ import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
-import de.gishmo.gwt.example.module0809.client.ClientContext;
-import de.gishmo.gwt.example.module0809.client.ui.detail.DetailPlace;
-import de.gishmo.gwt.example.module0809.client.ui.detail.DetailPresenter;
-import de.gishmo.gwt.example.module0809.client.ui.list.ListPlace;
-import de.gishmo.gwt.example.module0809.client.ui.list.ListPresenter;
-import de.gishmo.gwt.example.module0809.client.ui.search.SearchPlace;
-import de.gishmo.gwt.example.module0809.client.ui.search.SearchPresenter;
+import de.gishmo.gwt.example.module0806.client.ClientContext;
+import de.gishmo.gwt.example.module0806.client.ui.detail.DetailPlace;
+import de.gishmo.gwt.example.module0806.client.ui.detail.DetailPresenter;
+import de.gishmo.gwt.example.module0806.client.ui.list.ListPlace;
+import de.gishmo.gwt.example.module0806.client.ui.list.ListPresenter;
+import de.gishmo.gwt.example.module0806.client.ui.search.SearchPlace;
+import de.gishmo.gwt.example.module0806.client.ui.search.SearchPresenter;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
