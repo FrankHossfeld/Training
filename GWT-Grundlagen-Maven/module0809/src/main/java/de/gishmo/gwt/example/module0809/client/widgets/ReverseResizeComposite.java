@@ -1,23 +1,24 @@
-package de.gishmo.gwt.example.module0806.client.widgets;
+package de.gishmo.gwt.example.module0809.client.widgets;
 
-import com.google.gwt.user.client.ui.Composite;
+
+import com.google.gwt.user.client.ui.ResizeComposite;
 import com.mvp4g.client.view.ReverseViewInterface;
 
 /**
  * <p>ReverseComposite</p>
- * <p>Abstrakte Super-Klasse eines Views, der Composite erweitert. 
+ * <p>Abstrakte Super-Klasse eines Views, der ResizeComposite erweitert. 
  * Unterstuetzt das Handling des View-Delegate-Pattern.</p>
  * <br><br>
  */
-public abstract class ReverseComposite<P>
-    extends Composite
-    implements ReverseViewInterface<P> {
+public abstract class ReverseResizeComposite<P>
+  extends ResizeComposite
+  implements ReverseViewInterface<P> {
 
   private P presenter;
 
 //------------------------------------------------------------------------------
 
-  public ReverseComposite() {
+  public ReverseResizeComposite() {
     super();
   }
 

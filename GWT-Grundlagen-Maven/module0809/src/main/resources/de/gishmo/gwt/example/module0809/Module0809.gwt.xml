@@ -31,19 +31,19 @@
   <source path='shared'/>
   
   <!-- Deferred binding rules -->
-  <replace-with class="de.gishmo.gwt.example.module0806.client.ui.detail.DetailView">
-    <when-type-is class="de.gishmo.gwt.example.module0806.client.ui.detail.IDetailView"/>
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.detail.DetailView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.detail.IDetailView"/>
   </replace-with>  
-  <replace-with class="de.gishmo.gwt.example.module0806.client.ui.list.ListView">
-    <when-type-is class="de.gishmo.gwt.example.module0806.client.ui.list.IListView"/>
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.list.ListView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.list.IListView"/>
   </replace-with>  
-  <replace-with class="de.gishmo.gwt.example.module0806.client.ui.navigation.NavigationView">
-    <when-type-is class="de.gishmo.gwt.example.module0806.client.ui.navigation.INavigationView"/>
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.navigation.NavigationView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.navigation.INavigationView"/>
   </replace-with>  
-  <replace-with class="de.gishmo.gwt.example.module0806.client.ui.search.SearchView">
-    <when-type-is class="de.gishmo.gwt.example.module0806.client.ui.search.ISearchView"/>
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.search.SearchView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.search.ISearchView"/>
   </replace-with>  
-  <replace-with class="de.gishmo.gwt.example.module0806.client.ui.shell.ShellView">
-    <when-type-is class="de.gishmo.gwt.example.module0806.client.ui.shell.IShellView"/>
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.shell.ShellView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.shell.IShellView"/>
   </replace-with>  
 </module>

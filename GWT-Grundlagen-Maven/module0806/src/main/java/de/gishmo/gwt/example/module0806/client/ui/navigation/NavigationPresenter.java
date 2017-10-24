@@ -8,10 +8,10 @@ import de.gishmo.gwt.example.module0809.client.ui.list.ListPlace;
 import de.gishmo.gwt.example.module0809.client.ui.search.SearchPlace;
 
 public class NavigationPresenter
-  implements INavigationView.Presenter {
+  implements de.gishmo.gwt.example.module0809.client.ui.navigation.INavigationView.Presenter {
 
-  private INavigationView view;
-  private ClientContext   clientContext;
+  private de.gishmo.gwt.example.module0809.client.ui.navigation.INavigationView view;
+  private ClientContext                                                         clientContext;
   
   private PersonSearch search;
   
@@ -20,7 +20,7 @@ public class NavigationPresenter
   public NavigationPresenter(ClientContext clientContext) {
     this.clientContext = clientContext;
     
-    view = new NavigationView(clientContext.getStyle());
+    view = new de.gishmo.gwt.example.module0809.client.ui.navigation.NavigationView(clientContext.getStyle());
     view.setPresenter(this);
     
     bind();

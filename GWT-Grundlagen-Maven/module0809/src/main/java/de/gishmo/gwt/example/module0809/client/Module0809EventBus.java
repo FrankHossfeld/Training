@@ -4,10 +4,10 @@ import com.google.gwt.user.client.ui.Widget;
 import com.mvp4g.client.annotation.*;
 import com.mvp4g.client.event.EventBus;
 import de.gishmo.gwt.example.module0809.client.history.DefaultHistoryConverter;
-import de.gishmo.gwt.example.module0806.client.ui.list.ListPresenter;
-import de.gishmo.gwt.example.module0806.client.ui.navigation.NavigationPresenter;
-import de.gishmo.gwt.example.module0806.client.ui.search.SearchPresenter;
-import de.gishmo.gwt.example.module0806.client.ui.shell.ShellPresenter;
+import de.gishmo.gwt.example.module0809.client.ui.list.ListPresenter;
+import de.gishmo.gwt.example.module0809.client.ui.navigation.NavigationPresenter;
+import de.gishmo.gwt.example.module0809.client.ui.search.SearchPresenter;
+import de.gishmo.gwt.example.module0809.client.ui.shell.ShellPresenter;
 
 @Events(startPresenter = ShellPresenter.class,
         historyOnStart = true,

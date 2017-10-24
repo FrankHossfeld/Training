@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0806.client.resources;
+package de.gishmo.gwt.example.module0809.client.resources;
 
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.resources.client.ClientBundle;
