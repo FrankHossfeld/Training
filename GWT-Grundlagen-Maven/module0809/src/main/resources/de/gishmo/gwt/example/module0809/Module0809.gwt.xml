@@ -5,7 +5,7 @@
 -->
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
   "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
-<module rename-to='module0806'>
+<module rename-to='module0809'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
 
@@ -18,20 +18,32 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
-  <inherits name='com.google.gwt.activity.Activity'/>
-  <inherits name="com.google.gwt.logging.Logging"/>
-  <inherits name='com.google.gwt.place.Place'/>
+  <inherits name='com.mvp4g.Mvp4gModule'/>
 
   <inherits name="de.gishmo.gwt.example.module0503.ModulePerson" />
   <inherits name="de.gishmo.gwt.example.module0707.Module0707" />
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='de.gishmo.gwt.example.module0809.client.Module0806'/>
+  <entry-point class='de.gishmo.gwt.example.module0809.client.Module0809'/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
   <source path='shared'/>
-
-  <!-- allow Super Dev Mode -->
-  <add-linker name="xsiframe"/>
+  
+  <!-- Deferred binding rules -->
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.detail.DetailView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.detail.IDetailView"/>
+  </replace-with>  
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.list.ListView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.list.IListView"/>
+  </replace-with>  
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.navigation.NavigationView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.navigation.INavigationView"/>
+  </replace-with>  
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.search.SearchView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.search.ISearchView"/>
+  </replace-with>  
+  <replace-with class="de.gishmo.gwt.example.module0809.client.ui.shell.ShellView">
+    <when-type-is class="de.gishmo.gwt.example.module0809.client.ui.shell.IShellView"/>
+  </replace-with>  
 </module>
