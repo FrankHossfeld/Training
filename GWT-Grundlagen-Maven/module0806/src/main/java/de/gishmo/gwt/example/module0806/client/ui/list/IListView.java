@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.ui.list;
+package de.gishmo.gwt.example.module0806.client.ui.list;
 
 import com.google.gwt.user.client.ui.IsWidget;
 import de.gishmo.gwt.example.module0503.shared.dto.Person;

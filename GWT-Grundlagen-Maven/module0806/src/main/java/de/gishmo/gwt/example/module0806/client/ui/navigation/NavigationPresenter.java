@@ -1,16 +1,16 @@
-package de.gishmo.gwt.example.module0809.client.ui.navigation;
+package de.gishmo.gwt.example.module0806.client.ui.navigation;
 
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
 import de.gishmo.gwt.example.module0806.client.ClientContext;
 import de.gishmo.gwt.example.module0806.client.events.SearchPersons;
 import de.gishmo.gwt.example.module0806.client.events.SetNavigation;
-import de.gishmo.gwt.example.module0809.client.ui.list.ListPlace;
-import de.gishmo.gwt.example.module0809.client.ui.search.SearchPlace;
+import de.gishmo.gwt.example.module0806.client.ui.list.ListPlace;
+import de.gishmo.gwt.example.module0806.client.ui.search.SearchPlace;
 
 public class NavigationPresenter
-  implements de.gishmo.gwt.example.module0809.client.ui.navigation.INavigationView.Presenter {
+  implements INavigationView.Presenter {
 
-  private de.gishmo.gwt.example.module0809.client.ui.navigation.INavigationView view;
+  private INavigationView view;
   private ClientContext                                                         clientContext;
   
   private PersonSearch search;
@@ -20,7 +20,7 @@ public class NavigationPresenter
   public NavigationPresenter(ClientContext clientContext) {
     this.clientContext = clientContext;
     
-    view = new de.gishmo.gwt.example.module0809.client.ui.navigation.NavigationView(clientContext.getStyle());
+    view = new NavigationView(clientContext.getStyle());
     view.setPresenter(this);
     
     bind();

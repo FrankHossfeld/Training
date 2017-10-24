@@ -1,10 +1,10 @@
-package de.gishmo.gwt.example.module0809.client.ui.search;
+package de.gishmo.gwt.example.module0806.client.ui.search;
 
 import com.google.gwt.user.client.ui.Widget;
 import de.gishmo.gwt.example.module0806.client.ClientContext;
 import de.gishmo.gwt.example.module0806.client.events.SetStatus;
 import de.gishmo.gwt.example.module0806.client.resources.ApplicationConstants;
-import de.gishmo.gwt.example.module0809.client.ui.list.ListPlace;
+import de.gishmo.gwt.example.module0806.client.ui.list.ListPlace;
 import de.gishmo.gwt.example.module0806.client.widgets.PresentsWidgets;
 
 public class SearchPresenter

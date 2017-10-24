@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.ui.list;
+package de.gishmo.gwt.example.module0806.client.ui.list;
 
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -10,7 +10,7 @@ import de.gishmo.gwt.example.module0806.client.events.SearchPersons;
 import de.gishmo.gwt.example.module0806.client.events.SetStatus;
 import de.gishmo.gwt.example.module0806.client.resources.ApplicationConstants;
 import de.gishmo.gwt.example.module0806.client.resources.ApplicationMessages;
-import de.gishmo.gwt.example.module0809.client.ui.detail.DetailPlace;
+import de.gishmo.gwt.example.module0806.client.ui.detail.DetailPlace;
 import de.gishmo.gwt.example.module0806.client.widgets.PresentsWidgets;
 
 import java.util.List;

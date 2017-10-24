@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.ui.detail;
+package de.gishmo.gwt.example.module0806.client.ui.detail;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.Window;
@@ -8,9 +8,9 @@ import de.gishmo.gwt.example.module0503.shared.dto.Person;
 import de.gishmo.gwt.example.module0806.client.ClientContext;
 import de.gishmo.gwt.example.module0806.client.events.SetStatus;
 import de.gishmo.gwt.example.module0806.client.resources.ApplicationConstants;
-import de.gishmo.gwt.example.module0809.client.ui.list.ListPlace;
-import de.gishmo.gwt.example.module0809.client.ui.search.SearchPlace;
 import de.gishmo.gwt.example.module0806.client.widgets.PresentsWidgets;
+import de.gishmo.gwt.example.module0806.client.ui.list.ListPlace;
+import de.gishmo.gwt.example.module0806.client.ui.search.SearchPlace;
 
 public class DetailPresenter
   implements IDetailView.Presenter,

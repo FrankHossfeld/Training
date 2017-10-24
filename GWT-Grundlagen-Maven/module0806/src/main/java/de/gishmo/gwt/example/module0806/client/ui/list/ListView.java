@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.ui.list;
+package de.gishmo.gwt.example.module0806.client.ui.list;
 
 import com.google.gwt.cell.client.Cell;
 import com.google.gwt.cell.client.ClickableTextCell;

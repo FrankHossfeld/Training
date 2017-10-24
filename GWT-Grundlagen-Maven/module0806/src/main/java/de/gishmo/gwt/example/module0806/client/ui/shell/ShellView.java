@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.ui.shell;
+package de.gishmo.gwt.example.module0806.client.ui.shell;
 
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.ScheduledCommand;

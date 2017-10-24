@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.ui.detail;
+package de.gishmo.gwt.example.module0806.client.ui.detail;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;

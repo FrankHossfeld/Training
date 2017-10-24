@@ -1,4 +1,4 @@
-package de.gishmo.gwt.example.module0809.client.ui.navigation;
+package de.gishmo.gwt.example.module0806.client.ui.navigation;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
