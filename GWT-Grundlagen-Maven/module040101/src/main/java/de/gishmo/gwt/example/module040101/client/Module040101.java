@@ -2,9 +2,20 @@ package de.gishmo.gwt.example.module040101.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.shared.GWT;
-import com.google.gwt.event.dom.client.*;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.KeyCodes;
+import com.google.gwt.event.dom.client.KeyUpEvent;
+import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.*;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
+
 import de.gishmo.gwt.example.module040101.client.services.PersonService;
 import de.gishmo.gwt.example.module040101.client.services.PersonServiceAsync;
 import de.gishmo.gwt.example.module040101.shared.dto.Person;
@@ -13,8 +24,7 @@ import de.gishmo.gwt.example.module040101.shared.exception.PersonNotFoundExcepti
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Module040101
-  implements EntryPoint {
+public class Module040101 implements EntryPoint {
   /**
    * The message displayed to the user when the server cannot be reached or
    * returns an error.
@@ -43,12 +53,9 @@ public class Module040101
 
     // Add the nameField and sendButton to the RootPanel
     // Use RootPanel.get() to get the entire body element
-    RootPanel.get("nameFieldContainer")
-             .add(idField);
-    RootPanel.get("sendButtonContainer")
-             .add(sendButton);
-    RootPanel.get("errorLabelContainer")
-             .add(errorLabel);
+    RootPanel.get("nameFieldContainer").add(idField);
+    RootPanel.get("sendButtonContainer").add(sendButton);
+    RootPanel.get("errorLabelContainer").add(errorLabel);
 
     // Focus the cursor on the name field when the app loads
     idField.setFocus(true);
@@ -60,8 +67,7 @@ public class Module040101
     dialogBox.setAnimationEnabled(true);
     final Button closeButton = new Button("Close");
     // We can set the id of a widget by accessing its Element
-    closeButton.getElement()
-               .setId("closeButton");
+    closeButton.getElement().setId("closeButton");
     final Label textToServerLabel = new Label();
     final HTML serverResponseLabel = new HTML();
     VerticalPanel dialogVPanel = new VerticalPanel();
@@ -75,9 +81,23 @@ public class Module040101
     dialogBox.setWidget(dialogVPanel);
 
     // Add a handler to close the DialogBox
-    closeButton.addClickHandler(new     class MyHandler
-      implements ClickHandler,
-                 KeyUpHandler {
+    closeButton.addClickHandler(new ClickHandler() {
+      public void onClick(ClickEvent event) {
+        dialogBox.hide();
+        sendButton.setEnabled(true);
+        sendButton.setFocus(true);
+      }
+    });
+
+    // Create a handler for the sendButton and nameField
+    class MyHandler implements ClickHandler, KeyUpHandler {
+      /**
+       * Fired when the user clicks on the sendButton.
+       */
+      public void onClick(ClickEvent event) {
+        sendNameToServer();
+      }
+
       /**
        * Fired when the user types in the nameField.
        */
@@ -85,14 +105,7 @@ public class Module040101
         if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
           sendNameToServer();
         }
-      }      /**
-       * Fired when the user clicks on the sendButton.
-       */
-      public void onClick(ClickEvent event) {
-        sendNameToServer();
       }
-
-
 
       /**
        * Send the name from the nameField to the server and wait for a response.
@@ -101,8 +114,7 @@ public class Module040101
         // First, we validate the input.
         errorLabel.setText("");
         String textToServer = idField.getText();
-        if (textToServer == null || textToServer.trim()
-                                                .length() == 0) {
+        if (textToServer == null  || textToServer.trim().length() == 0) {
           errorLabel.setText("Please enter an ID");
           return;
         }
@@ -119,45 +131,35 @@ public class Module040101
         textToServerLabel.setText(textToServer);
         serverResponseLabel.setText("");
 
-        service.get(id,
-                    new AsyncCallback<Person>() {
+        service.get(id, new AsyncCallback<Person>() {
 
-                      @Override
-                      public void onFailure(Throwable caught) {
-                        dialogBox.setText("Remote Procedure Call - Failure");
-                        serverResponseLabel.addStyleName("serverResponseLabelError");
-                        // best way to test an exception
-                        try {
-                          throw caught;
-                        } catch (PersonNotFoundException e) {
-                          serverResponseLabel.setHTML(((PersonNotFoundException) caught).getMessage());
-                        } catch (Exception e) {
-                          serverResponseLabel.setHTML(SERVER_ERROR);
-                        } catch (Throwable e) {
-                          serverResponseLabel.setHTML(SERVER_ERROR);
-                        }
-                        dialogBox.center();
-                        closeButton.setFocus(true);
-                      }
+          @Override
+          public void onSuccess(Person result) {
+            dialogBox.setText("Remote Procedure Call");
+            serverResponseLabel.removeStyleName("serverResponseLabelError");
+            serverResponseLabel.setHTML("The name of the person you requested is: " + result.getFirstName() + " " + result.getName());
+            dialogBox.center();
+            closeButton.setFocus(true);
+          }
 
-                      @Override
-                      public void onSuccess(Person result) {
-                        dialogBox.setText("Remote Procedure Call");
-                        serverResponseLabel.removeStyleName("serverResponseLabelError");
-                        serverResponseLabel.setHTML("The name of the person you requested is: " + result.getFirstName() + " " + result.getName());
-                        dialogBox.center();
-                        closeButton.setFocus(true);
-                      }
-                    });
-      }
-    });
-
-    // Create a handler for the sendButton and nameField
-ClickHandler() {
-      public void onClick(ClickEvent event) {
-        dialogBox.hide();
-        sendButton.setEnabled(true);
-        sendButton.setFocus(true);
+          @Override
+          public void onFailure(Throwable caught) {
+            dialogBox.setText("Remote Procedure Call - Failure");
+            serverResponseLabel.addStyleName("serverResponseLabelError");
+            // best way to test an exception
+            try {
+              throw caught;
+            } catch (PersonNotFoundException e) {
+              serverResponseLabel.setHTML(((PersonNotFoundException) caught).getMessage());
+            } catch (Exception e) {
+              serverResponseLabel.setHTML(SERVER_ERROR);
+            } catch (Throwable e) {
+              serverResponseLabel.setHTML(SERVER_ERROR);
+            }
+            dialogBox.center();
+            closeButton.setFocus(true);
+          }
+        });
       }
     }
 

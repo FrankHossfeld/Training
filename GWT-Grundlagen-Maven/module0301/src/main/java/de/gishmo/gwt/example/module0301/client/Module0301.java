@@ -2,16 +2,26 @@ package de.gishmo.gwt.example.module0301.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.event.dom.client.*;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.KeyCodes;
+import com.google.gwt.event.dom.client.KeyUpEvent;
+import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.*;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
+
 import de.gishmo.gwt.example.module0301.shared.FieldVerifier;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class Module0301
-  implements EntryPoint {
+public class Module0301 implements EntryPoint {
   /**
    * The message displayed to the user when the server cannot be reached or
    * returns an error.
@@ -24,7 +34,7 @@ public class Module0301
    * Create a remote service proxy to talk to the server-side Greeting service.
    */
   private final GreetingServiceAsync greetingService = GWT
-                                                         .create(GreetingService.class);
+    .create(GreetingService.class);
 
   /**
    * This is the entry point method.
@@ -40,12 +50,9 @@ public class Module0301
 
     // Add the nameField and sendButton to the RootPanel
     // Use RootPanel.get() to get the entire body element
-    RootPanel.get("nameFieldContainer")
-             .add(nameField);
-    RootPanel.get("sendButtonContainer")
-             .add(sendButton);
-    RootPanel.get("errorLabelContainer")
-             .add(errorLabel);
+    RootPanel.get("nameFieldContainer").add(nameField);
+    RootPanel.get("sendButtonContainer").add(sendButton);
+    RootPanel.get("errorLabelContainer").add(errorLabel);
 
     // Focus the cursor on the name field when the app loads
     nameField.setFocus(true);
@@ -57,8 +64,7 @@ public class Module0301
     dialogBox.setAnimationEnabled(true);
     final Button closeButton = new Button("Close");
     // We can set the id of a widget by accessing its Element
-    closeButton.getElement()
-               .setId("closeButton");
+    closeButton.getElement().setId("closeButton");
     final Label textToServerLabel = new Label();
     final HTML serverResponseLabel = new HTML();
     VerticalPanel dialogVPanel = new VerticalPanel();
@@ -72,9 +78,23 @@ public class Module0301
     dialogBox.setWidget(dialogVPanel);
 
     // Add a handler to close the DialogBox
-    closeButton.addClickHandler(new class MyHandler
-      implements ClickHandler,
-                 KeyUpHandler {
+    closeButton.addClickHandler(new ClickHandler() {
+      public void onClick(ClickEvent event) {
+        dialogBox.hide();
+        sendButton.setEnabled(true);
+        sendButton.setFocus(true);
+      }
+    });
+
+    // Create a handler for the sendButton and nameField
+    class MyHandler implements ClickHandler, KeyUpHandler {
+      /**
+       * Fired when the user clicks on the sendButton.
+       */
+      public void onClick(ClickEvent event) {
+        sendNameToServer();
+      }
+
       /**
        * Fired when the user types in the nameField.
        */
@@ -122,22 +142,6 @@ public class Module0301
                                         closeButton.setFocus(true);
                                       }
                                     });
-      }
-
-      /**
-       * Fired when the user clicks on the sendButton.
-       */
-      public void onClick(ClickEvent event) {
-        sendNameToServer();
-      }
-    });
-
-    // Create a handler for the sendButton and nameField
-    ClickHandler() {
-      public void onClick (ClickEvent event){
-        dialogBox.hide();
-        sendButton.setEnabled(true);
-        sendButton.setFocus(true);
       }
     }
 
