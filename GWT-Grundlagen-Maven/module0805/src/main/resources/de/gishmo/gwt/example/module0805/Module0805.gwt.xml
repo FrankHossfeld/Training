@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  When updating your version of GWT, you should also update this DTD reference,
+  so that your app can take advantage of the latest GWT module capabilities.
+-->
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.7.0//EN"
+  "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
+<module rename-to='module0805'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User'/>
+
+  <!-- Inherit the default GWT style sheet.  You can change       -->
+  <!-- the theme of your GWT application by uncommenting          -->
+  <!-- any one of the following lines.                            -->
+  <inherits name='com.google.gwt.user.theme.clean.Clean'/>
+  <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+  <!-- Other module inherits                                      -->
+  <inherits name='com.google.gwt.activity.Activity'/>
+  <inherits name="com.google.gwt.logging.Logging"/>
+  <inherits name='com.google.gwt.place.Place'/>
+
+  <inherits name="de.gishmo.gwt.example.module0503.ModulePerson" />
+  <inherits name="de.gishmo.gwt.example.module0707.Module0707" />
+
+
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='de.gishmo.gwt.example.module0805.client.Module0805'/>
+
+  <!--  Looging  -->
+  <set-property name="gwt.logging.logLevel" value="FINER" />
+  <set-property name="gwt.logging.enabled" value="TRUE" />
+  <set-property name="gwt.logging.consoleHandler" value="ENABLED" />
+
+  <!-- Logging send to server. (ENABLED/DISABLED) -->
+  <set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED" />
+
+  <!-- Ask for all possible messages -->
+  <!-- values are:  severe, warning, info, config, fine, finer, finest -->
+  <set-property name="gwt.logging.logLevel" value="INFO"/>
+  <!-- Write messages to browser consoles and to the jvm and dev mode -->
+  <!-- Note that these are the defaults, so we don’t actually need to list them -->
+  <set-property name="gwt.logging.consoleHandler" value="ENABLED"/>
+  <!--<set-property name="gwt.logging.firebugHandler" value="DISABLED"/>-->
+  <set-property name="gwt.logging.developmentModeHandler" value="ENABLED"/>
+  <set-property name="gwt.logging.systemHandler" value="ENABLED"/>
+  <!-- Disable the popupHandler when using GXT layouts, they draw above -->
+  <!--<set-property name="gwt.logging.popupHandler" value="DISABLED"/>-->
+  
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client'/>
+  <source path='shared'/>
+
+  <!-- allow Super Dev Mode -->
+  <add-linker name="xsiframe"/>
+</module>
