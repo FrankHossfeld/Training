@@ -3,6 +3,8 @@ package de.gishmo.gwt.example.module0707.client.widgets;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.core.shared.GWT;
+import com.google.gwt.editor.client.IsEditor;
+import com.google.gwt.editor.ui.client.adapters.ValueBoxEditor;
 import com.google.gwt.event.logical.shared.ResizeEvent;
 import com.google.gwt.event.logical.shared.ResizeHandler;
 import com.google.gwt.resources.client.ClientBundle;
@@ -11,6 +13,7 @@ import com.google.gwt.user.client.ui.*;
 public class TextField
   extends Composite
   implements HasText,
+             IsEditor<ValueBoxEditor<String>>,
              Focusable {
 
 
@@ -132,6 +135,11 @@ public class TextField
                  forceLayout();
                }
              });
+  }
+
+  @Override
+  public ValueBoxEditor<String> asEditor() {
+    return textBox.asEditor();
   }
 
   public interface Resources

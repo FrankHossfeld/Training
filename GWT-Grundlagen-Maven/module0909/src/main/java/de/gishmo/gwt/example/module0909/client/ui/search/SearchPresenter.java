@@ -1,14 +1,13 @@
 package de.gishmo.gwt.example.module0909.client.ui.search;
 
-import javax.inject.Inject;
-
 import com.google.gwt.core.client.GWT;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.BasePresenter;
-
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
 import de.gishmo.gwt.example.module0909.client.Module0909EventBus;
 import de.gishmo.gwt.example.module0909.client.model.ClientContext;
+
+import javax.inject.Inject;
 
 @Presenter(view = ISearchView.class)
 public class SearchPresenter
@@ -30,8 +29,7 @@ public class SearchPresenter
 
   public void onGotoSearch(String searchName,
                            String searchCity) {
-    view.setSearch(new PersonSearch(searchName,
-                                    searchCity));
+    view.setSearch(clientContext.getPersonSearch());
     eventBus.setContent(view.asWidget());
   }
 

@@ -7,11 +7,8 @@ public class ClientContext {
   /* searchs */
   private PersonSearch personSearch;
 
-  {
-    this.personSearch = new PersonSearch();
-  }
-
   public ClientContext() {
+    this.personSearch = new PersonSearch();
   }
 
   public PersonSearch getPersonSearch() {
