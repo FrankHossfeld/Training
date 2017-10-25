@@ -22,6 +22,8 @@ public class DetailPresenter
 
   private DetailPlace place;
 
+  private boolean isUpdate;
+
   //------------------------------------------------------------------------------
 
   public DetailPresenter(ClientContext clientContext,
@@ -44,7 +46,7 @@ public class DetailPresenter
 
   @Override
   public String mayStop() {
-    if (view.isDirty()) {
+    if (!this.isUpdate && view.isDirty()) {
       return ApplicationConstants.CONSTANTS.detailMessage();
     }
     return null; // happy to stop
@@ -56,6 +58,7 @@ public class DetailPresenter
       createListPlace();
       return;
     }
+    this.isUpdate = false;
     getPerson(place.getId());
   }
 
@@ -67,12 +70,14 @@ public class DetailPresenter
 
   @Override
   public void doRevert() {
+    this.isUpdate = false;
     clientContext.getPlaceController()
                  .goTo(createListPlace());
   }
 
   @Override
   public void doUpdate(Person person) {
+    this.isUpdate = true;
     clientContext.getPersonService()
                  .update(person,
                          new AsyncCallback<Void>() {
