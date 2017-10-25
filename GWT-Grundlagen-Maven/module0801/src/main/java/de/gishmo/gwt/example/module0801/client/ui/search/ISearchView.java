@@ -7,7 +7,7 @@ public interface ISearchView
   extends ReverseView<ISearchView.Presenter>,
           IsWidget {
 
-  public interface Presenter {
+  interface Presenter {
 
     void doClickSearchButton(String searchName,
                              String searchCity);
