@@ -1,6 +1,5 @@
 package de.gishmo.gwt.example.module0909.client.ui.navigation;
 
-import com.google.gwt.core.shared.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
@@ -8,7 +7,7 @@ import com.google.gwt.user.client.ui.FlowPanel;
 
 import de.gishmo.gwt.example.module0909.client.resources.ApplicationConstants;
 import de.gishmo.gwt.example.module0909.client.resources.ApplicationCss;
-import de.gishmo.gwt.example.module0909.client.resources.CssProvider;
+import de.gishmo.gwt.example.module0909.client.resources.ApplicationStyleFactory;
 import de.gishmo.gwt.example.module0909.client.widgets.ReverseComposite;
 
 public class NavigationView
@@ -16,20 +15,19 @@ public class NavigationView
   implements INavigationView {
 
   private ApplicationCss style;
-  private FlowPanel      panel;
-  private Button         searchButton;
-  private Button         listButton;
 
-  //------------------------------------------------------------------------------
+  private FlowPanel panel;
+
+  private Button searchButton;
+  private Button listButton;
 
   public NavigationView() {
     super();
-    GWT.debugger();
+    this.style = ApplicationStyleFactory.get()
+                                        .getStyle();
     createView();
     bind();
   }
-
-  //------------------------------------------------------------------------------
 
   private void bind() {
     searchButton.addClickHandler(new ClickHandler() {
@@ -48,11 +46,7 @@ public class NavigationView
 
   }
 
-  public void createView() {
-    GWT.debugger();
-    this.style = CssProvider.get()
-                            .getStyle();
-
+  private void createView() {
     panel = new FlowPanel();
     panel.addStyleName(style.navigationPanel());
 

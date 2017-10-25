@@ -43,7 +43,10 @@
   <replace-with class="de.gishmo.gwt.example.module0909.client.ui.list.ListView">
     <when-type-is class="de.gishmo.gwt.example.module0909.client.ui.list.IListView"/>
   </replace-with>
-  
+  <replace-with class="de.gishmo.gwt.example.module0909.client.ui.detail.DetailView">
+    <when-type-is class="de.gishmo.gwt.example.module0909.client.ui.detail.IDetailView"/>
+  </replace-with>
+
 
   <!-- allow Super Dev Mode -->
   <add-linker name="xsiframe"/>

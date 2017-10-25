@@ -10,10 +10,10 @@ public class SetNavigation
   public static Type<SetNavigation.SetNavigationHandler> TYPE = new Type<SetNavigation.SetNavigationHandler>();
 
   private Widget widget;
-  
+
   public SetNavigation(Widget widget) {
     super();
-    
+
     this.widget = widget;
   }
 
@@ -31,11 +31,10 @@ public class SetNavigation
     handler.onSetNavigation(this);
   }
 
-  
   public interface SetNavigationHandler
     extends EventHandler {
-    
+
     void onSetNavigation(SetNavigation event);
-  
+
   }
 }

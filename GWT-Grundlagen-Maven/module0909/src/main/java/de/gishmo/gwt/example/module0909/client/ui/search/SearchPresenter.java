@@ -2,11 +2,13 @@ package de.gishmo.gwt.example.module0909.client.ui.search;
 
 import javax.inject.Inject;
 
+import com.google.gwt.core.client.GWT;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.BasePresenter;
 
-import de.gishmo.gwt.example.module0909.client.ClientContext;
+import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
 import de.gishmo.gwt.example.module0909.client.Module0909EventBus;
+import de.gishmo.gwt.example.module0909.client.model.ClientContext;
 
 @Presenter(view = ISearchView.class)
 public class SearchPresenter
@@ -17,22 +19,32 @@ public class SearchPresenter
   private ClientContext clientContext;
 
   public SearchPresenter() {
+    super();
+  }
+
+  public void onInitHistory() {
+    onGotoSearch("",
+                 "");
+    ;
+  }
+
+  public void onGotoSearch(String searchName,
+                           String searchCity) {
+    view.setSearch(new PersonSearch(searchName,
+                                    searchCity));
+    eventBus.setContent(view.asWidget());
   }
 
   @Override
-  public void doClickSearchButton(String searchName,
-                                  String searchCity) {
-    clientContext.setSearchCity(searchCity);
-    clientContext.setSearchName(searchName);
-    eventBus.gotoList(searchName,
-                      searchCity);
+  public void doClickSearchButton(PersonSearch search) {
+    GWT.debugger();
+    // fuer NavigatiponPresenter speichern ...
+    clientContext.setPersonSearch(search);
+    eventBus.gotoList(search.getName(),
+                      search.getCity());
   }
 
+  @Override
   public void bind() {
-    eventBus.setCenter(view.asWidget());
-  }
-
-  public void onGotoSearch() {
-    eventBus.setCenter(view.asWidget());
   }
 }

@@ -3,31 +3,28 @@ package de.gishmo.gwt.example.module0909.client.resources;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.resources.client.ClientBundle;
 
-public class CssProvider {
+public class ApplicationStyleFactory {
 
-  private static CssProvider instance;
-  /* application */
-  private ApplicationCss style;
+  private static ApplicationStyleFactory factory;
+  private        ApplicationCss          style;
 
-  private CssProvider() {
+  private ApplicationStyleFactory() {
     /* create Resources */
     Resources resources = GWT.create(Resources.class);
     this.style = resources.style();
     this.style.ensureInjected();
   }
 
-  public static CssProvider get() {
-    if (instance == null) {
-      instance = new CssProvider();
+  public static ApplicationStyleFactory get() {
+    if (factory == null) {
+      factory = new ApplicationStyleFactory();
     }
-    return instance;
+    return factory;
   }
 
   public ApplicationCss getStyle() {
     return style;
   }
-
-  //------------------------------------------------------------------------------
 
   public interface Resources
     extends ClientBundle {

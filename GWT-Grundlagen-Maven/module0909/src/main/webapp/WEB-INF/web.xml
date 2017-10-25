@@ -12,12 +12,12 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>personServiceImpl</servlet-name>
-  	<url-pattern>/module0906/person</url-pattern>
+  	<url-pattern>/module0909/person</url-pattern>
   </servlet-mapping>
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>Module0906.html</welcome-file>
+    <welcome-file>Module0909.html</welcome-file>
   </welcome-file-list>
 
 </web-app>

@@ -9,10 +9,10 @@ public class SetStatus
   public static Type<SetStatus.SetStatusHandler> TYPE = new Type<SetStatus.SetStatusHandler>();
 
   private String status;
-  
+
   public SetStatus(String status) {
     super();
-    
+
     this.status = status;
   }
 
@@ -30,11 +30,10 @@ public class SetStatus
     handler.onSetStatus(this);
   }
 
-  
   public interface SetStatusHandler
     extends EventHandler {
-    
+
     void onSetStatus(SetStatus event);
-  
+
   }
 }

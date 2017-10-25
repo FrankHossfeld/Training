@@ -11,9 +11,9 @@ public interface IListView
   extends ReverseViewInterface<IListView.Presenter>,
           IsWidget {
 
-  void setData(List<Person> result);
-
   void resetTable();
+
+  void setData(List<Person> result);
 
   public interface Presenter {
 

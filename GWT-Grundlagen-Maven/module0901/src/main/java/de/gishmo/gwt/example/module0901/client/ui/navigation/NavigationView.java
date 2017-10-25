@@ -4,6 +4,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
+
 import de.gishmo.gwt.example.module0708.client.widgets.ReverseComposite;
 import de.gishmo.gwt.example.module0901.client.resources.ApplicationConstants;
 import de.gishmo.gwt.example.module0901.client.resources.ApplicationCss;
@@ -16,19 +17,19 @@ public class NavigationView
   private FlowPanel      panel;
   private Button         searchButton;
   private Button         listButton;
-  
-//------------------------------------------------------------------------------
+
+  //------------------------------------------------------------------------------
 
   public NavigationView(ApplicationCss style) {
     super();
-    
+
     this.style = style;
-    
+
     createView();
     bind();
   }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   private void bind() {
     searchButton.addClickHandler(new ClickHandler() {
@@ -37,7 +38,7 @@ public class NavigationView
         getPresenter().doShowSearch();
       }
     });
-    
+
     listButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {

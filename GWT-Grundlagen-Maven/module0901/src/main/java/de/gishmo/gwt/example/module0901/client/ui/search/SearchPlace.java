@@ -10,34 +10,34 @@ public class SearchPlace
   private String searchName;
   private String searchCity;
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
-
-  public SearchPlace(String searchName, String searchCity) {
+  public SearchPlace(String searchName,
+                     String searchCity) {
     super();
     this.searchName = searchName;
     this.searchCity = searchCity;
   }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   public String getSearchName() {
     return searchName;
-  }
-
-  public String getSearchCity() {
-    return searchCity;
   }
 
   public void setSearchName(String searchName) {
     this.searchName = searchName;
   }
 
+  public String getSearchCity() {
+    return searchCity;
+  }
+
   public void setSearchCity(String searchCity) {
     this.searchCity = searchCity;
   }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   @Prefix("se")
   public static class Tokenizer
@@ -45,15 +45,18 @@ public class SearchPlace
 
     public SearchPlace getPlace(String token) {
       try {
-//        GWT.log(token);
-//        GWT.log(Integer.toString(token.indexOf("-!B0-")));
-        String searchName = token.substring(0, token.indexOf("-!B0-"));
+        //        GWT.log(token);
+        //        GWT.log(Integer.toString(token.indexOf("-!B0-")));
+        String searchName = token.substring(0,
+                                            token.indexOf("-!B0-"));
         String searchCity = token.substring(token.indexOf("-!B0-") + 5);
-//        GWT.log(searchName);
-//        GWT.log(searchCity);
-        return new SearchPlace(searchName, searchCity);
+        //        GWT.log(searchName);
+        //        GWT.log(searchCity);
+        return new SearchPlace(searchName,
+                               searchCity);
       } catch (Exception e) {
-        return new SearchPlace("", "");
+        return new SearchPlace("",
+                               "");
       }
     }
 

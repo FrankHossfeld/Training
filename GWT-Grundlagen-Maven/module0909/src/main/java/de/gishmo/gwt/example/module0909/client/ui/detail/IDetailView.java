@@ -1,12 +1,12 @@
-package de.gishmo.gwt.example.module0901.client.ui.detail;
+package de.gishmo.gwt.example.module0909.client.ui.detail;
 
 import com.google.gwt.user.client.ui.IsWidget;
+import com.mvp4g.client.view.ReverseViewInterface;
 
 import de.gishmo.gwt.example.module0503.shared.dto.Person;
-import de.gishmo.gwt.example.module0708.client.widgets.ReverseView;
 
 public interface IDetailView
-  extends ReverseView<IDetailView.Presenter>,
+  extends ReverseViewInterface<IDetailView.Presenter>,
           IsWidget {
 
   boolean isDirty();

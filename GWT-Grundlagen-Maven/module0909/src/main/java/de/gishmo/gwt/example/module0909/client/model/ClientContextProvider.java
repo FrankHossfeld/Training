@@ -1,6 +1,6 @@
-package de.gishmo.gwt.example.module0909.client;
+package de.gishmo.gwt.example.module0909.client.model;
 
-import javax.inject.Provider;
+import com.google.inject.Provider;
 
 public class ClientContextProvider
   implements Provider<ClientContext> {

@@ -4,6 +4,7 @@ import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
+
 import de.gishmo.gwt.example.module0503.shared.dto.Person;
 import de.gishmo.gwt.example.module0708.client.widgets.PresentsWidgets;
 import de.gishmo.gwt.example.module0901.client.ClientContext;
@@ -11,7 +12,6 @@ import de.gishmo.gwt.example.module0901.client.events.SetStatus;
 import de.gishmo.gwt.example.module0901.client.resources.ApplicationConstants;
 import de.gishmo.gwt.example.module0901.client.ui.list.ListPlace;
 import de.gishmo.gwt.example.module0901.client.ui.search.SearchPlace;
-
 
 public class DetailPresenter
   implements IDetailView.Presenter,
@@ -21,8 +21,8 @@ public class DetailPresenter
   private IDetailView   view;
 
   private DetailPlace place;
-    
-//------------------------------------------------------------------------------
+
+  //------------------------------------------------------------------------------
 
   public DetailPresenter(ClientContext clientContext,
                          DetailPlace place) {
@@ -31,11 +31,11 @@ public class DetailPresenter
 
     view = new DetailView(this.clientContext.getStyle());
     view.setPresenter(this);
-    
+
     bind();
   }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   @Override
   public Widget asWidget() {
@@ -63,53 +63,64 @@ public class DetailPresenter
   public void stop() {
   }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   @Override
   public void doRevert() {
-    clientContext.getPlaceController().goTo(createListPlace());
+    clientContext.getPlaceController()
+                 .goTo(createListPlace());
   }
 
   @Override
   public void doUpdate(Person person) {
-    clientContext.getPersonService().update(person, 
-                   new AsyncCallback<Void>() {
-                    @Override
-                    public void onFailure(Throwable caught) {
-                      Window.alert("PANIC!!!!");
-                    }
-                    @Override
-                    public void onSuccess(Void result) {
-                      clientContext.getPlaceController().goTo(createListPlace());
-                    }
-                  });
+    clientContext.getPersonService()
+                 .update(person,
+                         new AsyncCallback<Void>() {
+                           @Override
+                           public void onFailure(Throwable caught) {
+                             Window.alert("PANIC!!!!");
+                           }
+
+                           @Override
+                           public void onSuccess(Void result) {
+                             clientContext.getPlaceController()
+                                          .goTo(createListPlace());
+                           }
+                         });
   }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   private void bind() {
   }
-  
+
   private Place createListPlace() {
     if (clientContext.getPersonSearch() == null) {
-      return new SearchPlace("", "");
+      return new SearchPlace("",
+                             "");
     } else {
-      return new ListPlace(clientContext.getPersonSearch().getName(), clientContext.getPersonSearch().getCity());
+      return new ListPlace(clientContext.getPersonSearch()
+                                        .getName(),
+                           clientContext.getPersonSearch()
+                                        .getCity());
     }
   }
-  
+
   private void getPerson(long id) {
-    clientContext.getPersonService().get(id, 
-                                         new AsyncCallback<Person>() {
-                                          @Override
-                                          public void onFailure(Throwable caught) {
-                                            Window.alert("PANIC!!!!");
-                                          }
-                                          @Override
-                                          public void onSuccess(Person result) {
-                                            view.setUpData(result);
-                                            clientContext.getEventBus().fireEvent(new SetStatus(ApplicationConstants.CONSTANTS.statusDetail()));
-                                          }
-    });
+    clientContext.getPersonService()
+                 .get(id,
+                      new AsyncCallback<Person>() {
+                        @Override
+                        public void onFailure(Throwable caught) {
+                          Window.alert("PANIC!!!!");
+                        }
+
+                        @Override
+                        public void onSuccess(Person result) {
+                          view.setUpData(result);
+                          clientContext.getEventBus()
+                                       .fireEvent(new SetStatus(ApplicationConstants.CONSTANTS.statusDetail()));
+                        }
+                      });
   }
 }

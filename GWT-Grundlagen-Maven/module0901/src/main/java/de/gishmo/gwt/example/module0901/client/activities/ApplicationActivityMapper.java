@@ -1,11 +1,15 @@
 package de.gishmo.gwt.example.module0901.client.activities;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
+
 import de.gishmo.gwt.example.module0901.client.ClientContext;
 import de.gishmo.gwt.example.module0901.client.ui.detail.DetailPlace;
 import de.gishmo.gwt.example.module0901.client.ui.detail.DetailPresenter;
@@ -14,25 +18,21 @@ import de.gishmo.gwt.example.module0901.client.ui.list.ListPresenter;
 import de.gishmo.gwt.example.module0901.client.ui.search.SearchPlace;
 import de.gishmo.gwt.example.module0901.client.ui.search.SearchPresenter;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class ApplicationActivityMapper
   implements ActivityMapper {
-  
 
   private static Logger logger = Logger.getLogger(ApplicationActivityMapper.class.getName());
-  
+
   private ClientContext clientContext;
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   public ApplicationActivityMapper(ClientContext clientContext) {
     super();
     this.clientContext = clientContext;
   }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   @Override
   public Activity getActivity(Place place) {
@@ -41,24 +41,24 @@ public class ApplicationActivityMapper
       // The list of tasks.
       return this.createDetailActivity((DetailPlace) place);
     }
-    
+
     if (place instanceof ListPlace) {
       this.logGotoPlace(ListPlace.class.getName());
       // The list of tasks.
       return this.createListActivity((ListPlace) place);
     }
-    
+
     if (place instanceof SearchPlace) {
       this.logGotoPlace(SearchPlace.class.getName());
       // The list of tasks.
       return this.createSearchActivity((SearchPlace) place);
     }
-    
+
     return null;
   }
 
-//------------------------------------------------------------------------------
-  
+  //------------------------------------------------------------------------------
+
   private AbstractActivity createDetailActivity(final DetailPlace place) {
     // The list of tasks.
     return new AbstractActivity() {
@@ -66,9 +66,11 @@ public class ApplicationActivityMapper
       private DetailPresenter presenter;
 
       @Override
-      public void start(AcceptsOneWidget panel, EventBus eventBus) {
+      public void start(AcceptsOneWidget panel,
+                        EventBus eventBus) {
         logStart("DetailActivity");
-        presenter = new DetailPresenter(clientContext, place);
+        presenter = new DetailPresenter(clientContext,
+                                        place);
         presenter.start();
         panel.setWidget(presenter);
       }
@@ -84,7 +86,7 @@ public class ApplicationActivityMapper
         logStop("CustomerSearchActivity");
         presenter.stop();
       }
-   };
+    };
   }
 
   private AbstractActivity createListActivity(final ListPlace place) {
@@ -94,9 +96,11 @@ public class ApplicationActivityMapper
       private ListPresenter presenter;
 
       @Override
-      public void start(AcceptsOneWidget panel, EventBus eventBus) {
+      public void start(AcceptsOneWidget panel,
+                        EventBus eventBus) {
         logStart("ListActivity");
-        presenter = new ListPresenter(clientContext, place);
+        presenter = new ListPresenter(clientContext,
+                                      place);
         presenter.start();
         panel.setWidget(presenter);
       }
@@ -112,7 +116,7 @@ public class ApplicationActivityMapper
         logStop("CustomerSearchActivity");
         presenter.stop();
       }
-   };
+    };
   }
 
   private AbstractActivity createSearchActivity(final SearchPlace place) {
@@ -122,9 +126,11 @@ public class ApplicationActivityMapper
       private SearchPresenter presenter;
 
       @Override
-      public void start(AcceptsOneWidget panel, EventBus eventBus) {
+      public void start(AcceptsOneWidget panel,
+                        EventBus eventBus) {
         logStart("SearchActivity");
-        presenter = new SearchPresenter(clientContext, place);
+        presenter = new SearchPresenter(clientContext,
+                                        place);
         presenter.start();
         panel.setWidget(presenter);
       }
@@ -140,10 +146,10 @@ public class ApplicationActivityMapper
         logStop("CustomerSearchActivity");
         presenter.stop();
       }
-   };
+    };
   }
 
-//------------------------------------------------------------------------------
+  //------------------------------------------------------------------------------
 
   private void logGotoPlace(String place) {
     this.logInfo("AppActivityMapper: goto place -> " + place);
@@ -162,6 +168,7 @@ public class ApplicationActivityMapper
   }
 
   private void logInfo(String message) {
-    logger.log(Level.INFO, message);
+    logger.log(Level.INFO,
+               message);
   }
 }

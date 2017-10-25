@@ -2,6 +2,7 @@ package de.gishmo.gwt.example.module0901.client.activities;
 
 import com.google.gwt.place.shared.PlaceHistoryMapper;
 import com.google.gwt.place.shared.WithTokenizers;
+
 import de.gishmo.gwt.example.module0901.client.ui.detail.DetailPlace;
 import de.gishmo.gwt.example.module0901.client.ui.list.ListPlace;
 import de.gishmo.gwt.example.module0901.client.ui.search.SearchPlace;
@@ -16,9 +17,7 @@ import de.gishmo.gwt.example.module0901.client.ui.search.SearchPlace;
  * Its implementation is code generated based on the @WithTokenizers
  * annotation.
  */
-@WithTokenizers({SearchPlace.Tokenizer.class,
-                 ListPlace.Tokenizer.class,
-                 DetailPlace.Tokenizer.class})
+@WithTokenizers({ SearchPlace.Tokenizer.class, ListPlace.Tokenizer.class, DetailPlace.Tokenizer.class })
 public interface ApplicationPlaceHistoryMapper
   extends PlaceHistoryMapper {
 }

@@ -3,17 +3,17 @@ package de.gishmo.gwt.example.module0909.client.ui.search;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.mvp4g.client.view.ReverseViewInterface;
 
+import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
+
 public interface ISearchView
   extends ReverseViewInterface<ISearchView.Presenter>,
           IsWidget {
 
-  void setSearch(String searchName,
-                 String searchCity);
+  void setSearch(PersonSearch search);
 
-  interface Presenter {
+  public interface Presenter {
 
-    void doClickSearchButton(String searchName,
-                             String searchCity);
+    void doClickSearchButton(PersonSearch search);
 
   }
 }

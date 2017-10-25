@@ -5,8 +5,8 @@ import javax.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.BasePresenter;
 
-import de.gishmo.gwt.example.module0909.client.ClientContext;
 import de.gishmo.gwt.example.module0909.client.Module0909EventBus;
+import de.gishmo.gwt.example.module0909.client.model.ClientContext;
 
 @Presenter(view = INavigationView.class)
 public class NavigationPresenter
@@ -16,31 +16,32 @@ public class NavigationPresenter
   @Inject
   private ClientContext clientContext;
 
-  //------------------------------------------------------------------------------
-
   public NavigationPresenter() {
   }
 
-  //------------------------------------------------------------------------------
+  @Override
+  public void bind() {
+    eventBus.setNavigation(view.asWidget());
+  }
 
   @Override
   public void doShowList() {
-    eventBus.gotoList(clientContext.getSearchName(),
-                      clientContext.getSearchCity());
+    if (clientContext.getPersonSearch() != null) {
+      eventBus.gotoList(clientContext.getPersonSearch()
+                                     .getName(),
+                        clientContext.getPersonSearch()
+                                     .getCity());
+    } else {
+      eventBus.gotoSearch("",
+                          "");
+    }
   }
 
   @Override
   public void doShowSearch() {
-    eventBus.gotoSearch();
-  }
-
-  //------------------------------------------------------------------------------
-  //
-  //  public void onSelectNavigation(String selectedNavigation) {
-  //
-  //  }
-
-  public void bind() {
-    eventBus.setNavigation(view.asWidget());
+    eventBus.gotoSearch(clientContext.getPersonSearch()
+                                     .getName(),
+                        clientContext.getPersonSearch()
+                                     .getCity());
   }
 }

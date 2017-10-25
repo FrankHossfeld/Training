@@ -1,5 +1,8 @@
 package de.gishmo.gwt.example.module0901.client;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.GWT.UncaughtExceptionHandler;
@@ -10,31 +13,28 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.google.web.bindery.event.shared.UmbrellaException;
+
 import de.gishmo.gwt.example.module0901.client.activities.ApplicationActivityMapper;
 import de.gishmo.gwt.example.module0901.client.activities.ApplicationPlaceHistoryMapper;
 import de.gishmo.gwt.example.module0901.client.ui.navigation.NavigationPresenter;
 import de.gishmo.gwt.example.module0901.client.ui.search.SearchPlace;
 import de.gishmo.gwt.example.module0901.client.ui.shell.ShellPresenter;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Application {
-  
+
   /* logger */
   private static final Logger log = Logger.getLogger(Application.class.getName());
-  
 
   private ClientContext clientContext;
 
   private ShellPresenter shell;
 
   private PlaceController placeController;
-//
-//  /**
-//   * The top of our UI.
-//   */
-//  private final Module090304AppShell shell;
+  //
+  //  /**
+  //   * The top of our UI.
+  //   */
+  //  private final Module090304AppShell shell;
 
   private ActivityManager activityManager;
 
@@ -42,18 +42,19 @@ public class Application {
 
   private PlaceHistoryHandler historyHandler;
 
-//------------------------------------------------------------------------------
-  
+  //------------------------------------------------------------------------------
+
   public Application() {
     EventBus eventBus = new SimpleEventBus();
     placeController = new PlaceController(eventBus);
     
     /* create client context */
-    clientContext = new ClientContext(eventBus, placeController);
-    
+    clientContext = new ClientContext(eventBus,
+                                      placeController);
+
     activityManager = new ActivityManager(new ApplicationActivityMapper(clientContext),
                                           clientContext.getEventBus());
-    
+
     historyMapper = GWT.create(ApplicationPlaceHistoryMapper.class);
     historyHandler = new PlaceHistoryHandler(historyMapper);
 
@@ -62,8 +63,8 @@ public class Application {
     new NavigationPresenter(clientContext);
   }
 
-//------------------------------------------------------------------------------
-  
+  //------------------------------------------------------------------------------
+
   public void run(HasWidgets.ForIsWidget parentView) {
     activityManager.setDisplay(shell);
 
@@ -73,7 +74,9 @@ public class Application {
       @Override
       public void onUncaughtException(Throwable e) {
         while (e instanceof UmbrellaException) {
-          e = ((UmbrellaException) e).getCauses().iterator().next();
+          e = ((UmbrellaException) e).getCauses()
+                                     .iterator()
+                                     .next();
         }
 
         String message = e.getMessage();
@@ -87,11 +90,12 @@ public class Application {
       }
     });
 
-    initBrowserHistory(new SearchPlace("", ""));
+    initBrowserHistory(new SearchPlace("",
+                                       ""));
   }
 
   /**
-   * Initialize browser history / bookmarking. 
+   * Initialize browser history / bookmarking.
    */
   private void initBrowserHistory(SearchPlace defaultPlace) {
 

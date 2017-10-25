@@ -18,7 +18,7 @@ import com.google.gwt.user.client.ui.ScrollPanel;
 import de.gishmo.gwt.example.module0503.shared.dto.Person;
 import de.gishmo.gwt.example.module0909.client.resources.ApplicationConstants;
 import de.gishmo.gwt.example.module0909.client.resources.ApplicationCss;
-import de.gishmo.gwt.example.module0909.client.resources.CssProvider;
+import de.gishmo.gwt.example.module0909.client.resources.ApplicationStyleFactory;
 import de.gishmo.gwt.example.module0909.client.widgets.ReverseComposite;
 
 public class ListView
@@ -26,13 +26,17 @@ public class ListView
   implements IListView {
 
   private ScrollPanel       panel;
-  private ApplicationCss    style;
   private CellTable<Person> resultTable;
+  private ApplicationCss    style;
 
   //------------------------------------------------------------------------------
 
   public ListView() {
     super();
+
+    this.style = ApplicationStyleFactory.get()
+                                        .getStyle();
+
     createView();
     bind();
   }
@@ -57,9 +61,6 @@ public class ListView
   //------------------------------------------------------------------------------
 
   private void createView() {
-    this.style = CssProvider.get()
-                            .getStyle();
-
     panel = new ScrollPanel();
 
     FlowPanel resultPanel = new FlowPanel();

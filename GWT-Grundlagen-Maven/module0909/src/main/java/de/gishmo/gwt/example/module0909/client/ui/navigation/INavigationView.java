@@ -7,8 +7,6 @@ public interface INavigationView
   extends ReverseViewInterface<INavigationView.Presenter>,
           IsWidget {
 
-  void createView();
-
   public interface Presenter {
 
     void doShowList();
