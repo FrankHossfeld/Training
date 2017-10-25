@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:w="urn:import:de.gishmo.gwt.example.module0708.client.widgets.form">
+
+  <g:ScrollPanel>
+    <g:FlowPanel ui:field="detailPanel">
+      <g:Label ui:field="headline"/>
+      <w:TextField ui:field="detailFirstName"/>
+      <w:TextField ui:field="detailName"/>
+      <w:TextField ui:field="detailStreet"/>
+      <w:TextField ui:field="detailZip"/>
+      <w:TextField ui:field="detailCity"/>
+      <g:FlowPanel ui:field="buttonBar">
+        <g:Button ui:field="saveButton"/>
+        <g:Button ui:field="revertButton"/>
+      </g:FlowPanel>
+    </g:FlowPanel>
+  </g:ScrollPanel>
+</ui:UiBinder>
