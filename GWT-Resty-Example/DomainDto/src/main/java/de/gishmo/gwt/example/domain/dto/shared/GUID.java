@@ -33,8 +33,7 @@ public class GUID {
   /**
    * Generate a random uuid of the specified length. Example: uuid(15) returns "VcydxgltxrVZSTV"
    *
-   * @param len
-   *   the desired number of characters
+   * @param len the desired number of characters
    */
   public static String get(int len) {
     return get(len,
@@ -45,10 +44,8 @@ public class GUID {
    * Generate a random uuid of the specified length, and radix. Examples: <ul> <li>uuid(8, 2) returns "01001010" (8 character ID, base=2) <li>uuid(8, 10) returns "47473046" (8 character ID, base=10)
    * <li>uuid(8, 16) returns "098F4D35" (8 character ID, base=16) </ul>
    *
-   * @param len
-   *   the desired number of characters
-   * @param radix
-   *   the number of allowable values for each character (must be <= 62)
+   * @param len   the desired number of characters
+   * @param radix the number of allowable values for each character (must be <= 62)
    */
   public static String get(int len,
                            int radix) {
@@ -68,7 +65,7 @@ public class GUID {
    */
   public static String get() {
     char[] uuid = new char[36];
-    int    r;
+    int r;
 
     // rfc4122 requires these characters
     uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';

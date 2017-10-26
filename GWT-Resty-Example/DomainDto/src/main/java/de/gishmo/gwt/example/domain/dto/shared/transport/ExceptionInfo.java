@@ -14,13 +14,13 @@ public class ExceptionInfo
   }
 
   public ExceptionInfo(Throwable throwable,
-                       String pMethode,
-                       String pMessage,
-                       String pParameter) {
+                       String methode,
+                       String message,
+                       String parameter) {
     super(Loglevel.ERROR,
-          pMethode,
-          pMessage,
-          pParameter);
+          methode,
+          message,
+          parameter);
     exceptionMessage = throwable.getMessage();
   }
 

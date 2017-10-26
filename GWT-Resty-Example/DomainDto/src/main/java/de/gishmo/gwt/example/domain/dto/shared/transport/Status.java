@@ -1,14 +1,12 @@
 package de.gishmo.gwt.example.domain.dto.shared.transport;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-
 import de.gishmo.gwt.example.domain.dto.shared.AbstractDto;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>Status eines Server-Calls</p>
@@ -36,11 +34,11 @@ public class Status
   extends AbstractDto {
 
   /* Returncode des Calls */
-  private ReturnCode      returncode;
+  private ReturnCode   returncode;
   /* Liste der fachlichen Meldungen */
   private List<String> meldungenFachlich;
   /* Technische Fehlermeildung */
-  private String          meldungTechnisch;
+  private String       meldungTechnisch;
 
   public Status() {
     super();
@@ -77,8 +75,7 @@ public class Status
    * <p>Setzen der technischen Fehlermeldung.</p>
    * <p>Durch das Setzen der Meldung wir der Status auf {@link ReturnCode}.TECHNISCHER_FEHLER gesetzt.</p>
    *
-   * @param meldungTechnisch
-   *   technische Fehlermeldung
+   * @param meldungTechnisch technische Fehlermeldung
    */
   public void setMeldungTechnisch(String meldungTechnisch) {
     if (meldungTechnisch != null && !meldungTechnisch.trim()

@@ -1,7 +1,6 @@
 package de.gishmo.gwt.example.domain.dto.shared.transport.response;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
 import de.gishmo.gwt.example.domain.dto.shared.AbstractDto;
 import de.gishmo.gwt.example.domain.dto.shared.transport.Status;
 

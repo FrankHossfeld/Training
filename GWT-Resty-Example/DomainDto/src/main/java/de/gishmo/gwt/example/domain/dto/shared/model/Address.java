@@ -1,11 +1,10 @@
 package de.gishmo.gwt.example.domain.dto.shared.model;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-
 import de.gishmo.gwt.example.domain.dto.shared.AbstractDto;
+
+import java.io.Serializable;
 
 @SuppressWarnings("serial")
 @JsonTypeName("Address")
@@ -13,21 +12,24 @@ import de.gishmo.gwt.example.domain.dto.shared.AbstractDto;
 public class Address
   extends AbstractDto
   implements Serializable {
-  
+
   private long id;
-  
+
   private String street;
   private String zip;
   private String city;
-  
+
   /* for serialization only */
   public Address() {
     super();
   }
 
-  public Address(long id, String street, String zip, String city) {
+  public Address(long id,
+                 String street,
+                 String zip,
+                 String city) {
     super();
-  
+
     this.id = id;
     this.street = street;
     this.zip = zip;

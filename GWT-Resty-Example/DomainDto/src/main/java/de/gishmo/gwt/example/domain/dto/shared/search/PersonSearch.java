@@ -1,11 +1,10 @@
 package de.gishmo.gwt.example.domain.dto.shared.search;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-
 import de.gishmo.gwt.example.domain.dto.shared.AbstractDto;
+
+import java.io.Serializable;
 
 @SuppressWarnings("serial")
 @JsonTypeName("PersonSearch")
@@ -13,15 +12,16 @@ import de.gishmo.gwt.example.domain.dto.shared.AbstractDto;
 public class PersonSearch
   extends AbstractDto
   implements Serializable {
-  
+
   private String name;
   private String city;
-  
+
   public PersonSearch() {
     super();
   }
 
-  public PersonSearch(String name, String city) {
+  public PersonSearch(String name,
+                      String city) {
     super();
     this.name = name;
     this.city = city;
@@ -31,12 +31,12 @@ public class PersonSearch
     return name;
   }
 
-  public String getCity() {
-    return city;
-  }
-
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getCity() {
+    return city;
   }
 
   public void setCity(String city) {

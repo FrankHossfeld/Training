@@ -29,7 +29,7 @@ public interface ExceptionUtilsConstants
   String serverNoResponseDataExist();
 
   String serverNoRespneseHeaderInforamationExist();
-  
+
   String serverTechnischerFehler();
 
   String notYetImplemetat();

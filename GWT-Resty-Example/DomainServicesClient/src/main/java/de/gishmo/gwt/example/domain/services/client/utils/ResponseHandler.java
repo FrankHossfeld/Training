@@ -1,13 +1,11 @@
 package de.gishmo.gwt.example.domain.services.client.utils;
 
-import org.fusesource.restygwt.client.Method;
-
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.Window;
-
-import de.gishmo.gwt.example.domain.services.client.transport.ReturnCode;
-import de.gishmo.gwt.example.domain.services.client.transport.response.AbstractResponse;
+import de.gishmo.gwt.example.domain.dto.shared.transport.ReturnCode;
+import de.gishmo.gwt.example.domain.dto.shared.transport.response.AbstractResponse;
 import de.gishmo.gwt.example.domain.services.client.exception.ServerCommunicationException;
+import org.fusesource.restygwt.client.Method;
 
 public class ResponseHandler {
 
@@ -60,13 +58,17 @@ public class ResponseHandler {
                                                                                  callingMethod,
                                                                                  method,
                                                                                  new ServerCommunicationException(response.getStatus()
-                                                                                                                             .getMeldungTechnisch()));
+                                                                                                                          .getMeldungTechnisch()));
     } else {
       // Fachliche Meldungen ausgeben, wenn vorhanden ...
       if (response.getStatus()
                   .getMeldungenFachlich() != null &&
-          response.getStatus().getMeldungenFachlich().size() > 0) {
-        Window.alert(response.getStatus().getMeldungenFachlich().toString());
+          response.getStatus()
+                  .getMeldungenFachlich()
+                  .size() > 0) {
+        Window.alert(response.getStatus()
+                             .getMeldungenFachlich()
+                             .toString());
       }
       // Verarbeitung ausfuehren, wenn der Call OK ist ...
       if (ReturnCode.OK.equals(response.getStatus()
@@ -90,9 +92,7 @@ public class ResponseHandler {
     /**
      * <p>Setzen der aufrufenden Klasse</p>
      *
-     * @param callingClazz
-     *   aufrufende Klasse
-     *
+     * @param callingClazz aufrufende Klasse
      * @return ResponseHandler.Builder
      */
     public Builder callingClass(Class<?> callingClazz) {
@@ -103,9 +103,7 @@ public class ResponseHandler {
     /**
      * <p>Setzen des Namens der aufrufenden Methopde</p>
      *
-     * @param callingMethod
-     *   Name der aufrufenden Klasse
-     *
+     * @param callingMethod Name der aufrufenden Klasse
      * @return ResponseHandler.Builder
      */
     public Builder callingMethod(String callingMethod) {
@@ -116,9 +114,7 @@ public class ResponseHandler {
     /**
      * <p>Setzen der Methode der Response</p>
      *
-     * @param method
-     *   Methode der Response
-     *
+     * @param method Methode der Response
      * @return ResponseHandler.Builder
      */
     public Builder responseMethod(Method method) {
@@ -129,9 +125,7 @@ public class ResponseHandler {
     /**
      * <p>Setzen des Response</p>
      *
-     * @param response
-     *   der Response
-     *
+     * @param response der Response
      * @return ResponseHandler.Builder
      */
     public Builder response(AbstractResponse response) {
@@ -142,9 +136,7 @@ public class ResponseHandler {
     /**
      * <p>Setzen des Commands, das ausgefuehrt werden soll, wenn der Call erfolgreich war (Statusode: OK)</p>
      *
-     * @param commandOk
-     *   der Command
-     *
+     * @param commandOk der Command
      * @return ResponseHandler.Builder
      */
     public Builder executeIfStatuscodeIsOk(Command commandOk) {
@@ -155,9 +147,7 @@ public class ResponseHandler {
     /**
      * <p>Setzen des Commands, das ausgefuehrt werden soll, wenn der Call nicht erfolgreich war (Statusode: OK)</p>
      *
-     * @param commandNotOk
-     *   der Command
-     *
+     * @param commandNotOk der Command
      * @return ResponseHandler.Builder
      */
     public Builder executeIfStatuscodeIsNotOk(Command commandNotOk) {

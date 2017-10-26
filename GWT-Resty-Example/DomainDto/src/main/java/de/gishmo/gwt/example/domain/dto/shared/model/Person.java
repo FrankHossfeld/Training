@@ -1,11 +1,10 @@
 package de.gishmo.gwt.example.domain.dto.shared.model;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-
 import de.gishmo.gwt.example.domain.dto.shared.AbstractDto;
+
+import java.io.Serializable;
 
 @SuppressWarnings("serial")
 @JsonTypeName("Person")
@@ -15,20 +14,23 @@ public class Person
   implements Serializable {
 
   private long id;
-  
+
   private String name;
   private String firstName;
-  
+
   private Address address;
-  
+
   /* for serialization only */
   public Person() {
     super();
   }
 
-  public Person(long id, String name, String firstName, Address adress) {
+  public Person(long id,
+                String name,
+                String firstName,
+                Address adress) {
     super();
-    
+
     this.id = id;
     this.name = name;
     this.firstName = firstName;

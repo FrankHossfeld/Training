@@ -5,14 +5,18 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum ReturnCode {
 
-  OK("200", "OK"),
-  FACHLICHE_MELDUNGEN("300", "FACHLICHE_MELDUNGEN"),
-  TECHNISCHER_FEHLER("500", "TECHNISCHER_FEHLER");
+  OK("200",
+     "OK"),
+  FACHLICHE_MELDUNGEN("300",
+                      "FACHLICHE_MELDUNGEN"),
+  TECHNISCHER_FEHLER("500",
+                     "TECHNISCHER_FEHLER");
 
   private String statusCode;
   private String status;
 
-  ReturnCode(final String statusCode, final String status) {
+  ReturnCode(final String statusCode,
+             final String status) {
     this.statusCode = statusCode;
     this.status = status;
   }

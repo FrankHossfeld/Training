@@ -1,27 +1,29 @@
 package de.gishmo.gwt.example.domain.dto.shared.transport.request;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+
+import java.io.Serializable;
 
 @SuppressWarnings("serial")
 @JsonTypeName("PersonRequest")
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXTERNAL_PROPERTY)
-public class PersonRequest extends AbstractRequest implements Serializable {
+public class PersonRequest
+  extends AbstractRequest
+  implements Serializable {
 
-	private long id;
+  private long id;
 
-	public PersonRequest() {
-		super();
-	}
+  public PersonRequest() {
+    super();
+  }
 
-	public long getId() {
-		return id;
-	}
+  public long getId() {
+    return id;
+  }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+  public void setId(long id) {
+    this.id = id;
+  }
 
 }

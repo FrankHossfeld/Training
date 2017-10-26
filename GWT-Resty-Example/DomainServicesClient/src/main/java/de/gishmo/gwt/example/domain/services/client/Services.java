@@ -1,24 +1,22 @@
 package de.gishmo.gwt.example.domain.services.client;
 
+import com.google.gwt.core.client.GWT;
+import de.gishmo.gwt.example.domain.services.client.dto.ExceptionInfoService;
+import de.gishmo.gwt.example.domain.services.client.dto.PersonService;
 import org.fusesource.restygwt.client.Defaults;
 import org.fusesource.restygwt.client.Resource;
 import org.fusesource.restygwt.client.RestServiceProxy;
-
-import com.google.gwt.core.client.GWT;
-
-import de.gishmo.gwt.example.domain.services.client.dto.ExceptionInfoService;
-import de.gishmo.gwt.example.domain.services.client.dto.PersonService;
 
 
 public class Services {
 
   /* instance of the factory */
   private static Services services;
-  private String   path;
+  private        String   path;
 
   /* Services */
   private ExceptionInfoService exceptionInfoService;
-  private PersonService PersonService;
+  private PersonService        PersonService;
 
   private Services() {
     // set standard date format!
@@ -32,7 +30,8 @@ public class Services {
               .substring(0,
                          GWT.getModuleBaseURL()
                             .indexOf(moduleName) - 1);
-    path = path.substring(0, path.lastIndexOf("/"));
+    path = path.substring(0,
+                          path.lastIndexOf("/"));
     GWT.log("path: >>" + path + "<<");
   }
 
@@ -45,18 +44,10 @@ public class Services {
 
   public PersonService getPersonService() {
     if (PersonService == null) {
-    	PersonService = GWT.create(PersonService.class);
+      PersonService = GWT.create(PersonService.class);
       ((RestServiceProxy) PersonService).setResource(getResource("Person"));
     }
     return PersonService;
-  }
-  
-  public ExceptionInfoService getExceptionInfoService() {
-    if (exceptionInfoService == null) {
-      exceptionInfoService = GWT.create(ExceptionInfoService.class);
-      ((RestServiceProxy) exceptionInfoService).setResource(getResource("ExceptionInfo"));
-    }
-    return exceptionInfoService;
   }
 
   private Resource getResource(String resource) {
@@ -64,10 +55,18 @@ public class Services {
     StringBuilder resourcePath = new StringBuilder();
     resourcePath
 //    .append(path + "Services")
-                .append(path + "/DomainServices")
-                .append("/api")
-                .append("/" + resource);
+.append(path + "/DomainServices")
+.append("/api")
+.append("/" + resource);
     GWT.log("current resource path >>" + resourcePath.toString() + "<<");
     return new Resource(resourcePath.toString());
+  }
+
+  public ExceptionInfoService getExceptionInfoService() {
+    if (exceptionInfoService == null) {
+      exceptionInfoService = GWT.create(ExceptionInfoService.class);
+      ((RestServiceProxy) exceptionInfoService).setResource(getResource("ExceptionInfo"));
+    }
+    return exceptionInfoService;
   }
 }
