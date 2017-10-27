@@ -14,7 +14,7 @@ public interface IDetailView
   
   boolean isDirty(Person person);
   
-  public interface Presenter {
+  interface Presenter {
 
     void doRevert();
 

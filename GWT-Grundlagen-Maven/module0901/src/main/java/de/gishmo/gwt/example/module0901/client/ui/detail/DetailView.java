@@ -62,7 +62,14 @@ public class DetailView
   @Override
   public void setUpData(Person person) {
     this.person = person;
-    setDetailForm();
+    detailFirstName.setText(person.getFirstName());
+    detailName.setText(person.getName());
+    detailStreet.setText(person.getAddress()
+                               .getStreet());
+    detailZip.setText(person.getAddress()
+                            .getZip());
+    detailCity.setText(person.getAddress()
+                             .getCity());
   }
 
   //------------------------------------------------------------------------------
@@ -71,7 +78,14 @@ public class DetailView
     saveButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
-        updateDetailForm();
+        person.setFirstName(detailFirstName.getText());
+        person.setName(detailName.getText());
+        person.getAddress()
+              .setStreet(detailStreet.getText());
+        person.getAddress()
+              .setZip(detailZip.getText());
+        person.getAddress()
+              .setCity(detailCity.getText());
         getPresenter().doUpdate(person);
       }
     });
@@ -123,29 +137,5 @@ public class DetailView
     buttonBar.add(revertButton);
 
     initWidget(panel);
-  }
-
-  private void updateDetailForm() {
-    person.setFirstName(detailFirstName.getText());
-    person.setName(detailName.getText());
-    person.getAddress()
-          .setStreet(detailStreet.getText());
-    person.getAddress()
-          .setZip(detailZip.getText());
-    person.getAddress()
-          .setCity(detailCity.getText());
-  }
-
-  private void setDetailForm() {
-    if (person != null) {
-      detailFirstName.setText(person.getFirstName());
-      detailName.setText(person.getName());
-      detailStreet.setText(person.getAddress()
-                                 .getStreet());
-      detailZip.setText(person.getAddress()
-                              .getZip());
-      detailCity.setText(person.getAddress()
-                               .getCity());
-    }
   }
 }

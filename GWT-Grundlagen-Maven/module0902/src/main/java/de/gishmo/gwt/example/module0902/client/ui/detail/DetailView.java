@@ -36,7 +36,6 @@ public class DetailView
   private ScrollPanel panel;
   private Button saveButton;
   private ApplicationCss style;
-  private Person person;
   private Driver driver;
 
   public DetailView(ApplicationCss style) {
@@ -59,16 +58,14 @@ public class DetailView
 
   @Override
   public void setUpData(Person person) {
-    this.person = person;
-    setDetailForm();
+    driver.edit(person);
   }
 
   private void bind() {
     saveButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
-        updateDetailForm();
-        getPresenter().doUpdate(person);
+        getPresenter().doUpdate(driver.flush());
       }
     });
 
@@ -124,16 +121,6 @@ public class DetailView
     buttonBar.add(revertButton);
 
     initWidget(panel);
-  }
-
-  private void updateDetailForm() {
-    person = driver.flush();
-  }
-
-  private void setDetailForm() {
-    if (person != null) {
-      driver.edit(person);
-    }
   }
 
   interface Driver

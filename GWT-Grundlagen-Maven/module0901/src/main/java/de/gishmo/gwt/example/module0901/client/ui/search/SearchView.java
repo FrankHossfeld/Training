@@ -30,7 +30,6 @@ public class SearchView
   private ApplicationCss style;
   private Button searchButton;
   private Button resetButton;
-  private PersonSearch search;
 
   public SearchView(ApplicationCss style) {
     super();
@@ -45,7 +44,6 @@ public class SearchView
 
   @Override
   public void setSearch(PersonSearch search) {
-    this.search = search;
     /* transfer data to widgets */
     driver.edit(search);
   }
@@ -57,8 +55,7 @@ public class SearchView
       @Override
       public void onClick(ClickEvent event) {
         /* transfer data from widgets to model */
-        search = driver.flush();
-        getPresenter().doClickSearchButton(search);
+        getPresenter().doClickSearchButton(driver.flush());
       }
     });
 
