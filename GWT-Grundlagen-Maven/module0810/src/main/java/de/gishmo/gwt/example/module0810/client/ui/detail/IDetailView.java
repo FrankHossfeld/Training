@@ -13,7 +13,7 @@ public interface IDetailView
   
   void setUpData(Person result);
 
-  public interface Presenter {
+  interface Presenter {
 
     void doRevert();
 

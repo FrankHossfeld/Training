@@ -96,7 +96,7 @@ public class PersonServiceImpl
   @Override
   public Person get(long id)
     throws PersonNotFoundException {
-    if (persons.containsKey(new Long(id))) {
+    if (persons.containsKey(id)) {
       return persons.get(id);
     } else {
       throw new PersonNotFoundException("no data found for ID >>" + Long.toString(id) + "<<");

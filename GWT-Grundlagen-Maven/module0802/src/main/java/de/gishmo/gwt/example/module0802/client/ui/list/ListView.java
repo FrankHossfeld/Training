@@ -73,13 +73,8 @@ public class ListView
                                                     public String getValue(Person person) {
                                                       return person.getName() + ", " + person.getFirstName();
                                                     }
-                                                  }, 
-                                                  new FieldUpdater<Person, String>() {
-                                                    @Override
-                                                    public void update(int index, Person object, String value) {
-                                                      getPresenter().doUpdate(object);
-                                                    }
-                                                  });
+                                                  },
+                                                  (index, object, value) -> getPresenter().doUpdate(object));
     
     Column<Person, String> streetColumn = addColumn(new TextCell(), 
                                                     ApplicationConstants.CONSTANTS.columnStreet(), 

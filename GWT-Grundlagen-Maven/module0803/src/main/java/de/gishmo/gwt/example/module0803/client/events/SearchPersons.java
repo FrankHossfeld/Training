@@ -10,7 +10,11 @@ public class SearchPersons
 
   private String searchName;
   private String searchCity;
-   
+
+  public SearchPersons() {
+    this(null, null);
+  }
+
   public SearchPersons(String searchName, String searchCity) {
     super();
     this.searchName = searchName;

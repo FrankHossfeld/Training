@@ -14,7 +14,7 @@ import de.gishmo.gwt.example.module0809.client.ui.shell.ShellPresenter;
         ginModules = Module0809GinModule.class)
 @Debug(logLevel = Debug.LogLevel.DETAILED,
        logger = Module0809Logger.class)
-@Filters(filterClasses = Module0809EventFilter.class,
+@Filters(filterClasses = {Module0809EventFilter.class},
          filterForward = false)
 public interface Module0809EventBus extends EventBus {
 
@@ -34,6 +34,7 @@ public interface Module0809EventBus extends EventBus {
   
   @Event(handlers = {ListPresenter.class},
          historyConverter = DefaultHistoryConverter.class,
+         name = "C3PO",
          navigationEvent = true)
   void gotoList(String searchName, String searchOrt);
   
@@ -44,6 +45,7 @@ public interface Module0809EventBus extends EventBus {
   void initHistory();
 
   @Event(handlers = {SearchPresenter.class},
-         historyConverter = DefaultHistoryConverter.class)
+         historyConverter = DefaultHistoryConverter.class,
+         navigationEvent = true)
   void gotoSearch(String searchName, String searchOrt);
 }

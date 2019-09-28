@@ -1,8 +1,6 @@
 package de.gishmo.gwt.example.module0703.client;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -11,7 +9,7 @@ import com.google.gwt.user.client.ui.RootPanel;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class Module0703
-  implements EntryPoint {
+    implements EntryPoint {
 
   private DialogBox dialogBox;
 
@@ -25,12 +23,7 @@ public class Module0703
     // We can add style names to widgets
     showButton.addStyleName("sendButton");
 
-    showButton.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        dialogBox.center();
-      }
-    });
+    showButton.addClickHandler(event -> dialogBox.center());
 
     // Use RootPanel.get() to get the entire body element
     RootPanel.get()
@@ -42,6 +35,7 @@ public class Module0703
     dialogBox = new DialogBox();
     dialogBox.setText("Kundensuche");
     dialogBox.setAnimationEnabled(true);
+    dialogBox.setModal(true);
 
     // TODO: enter your code here
 

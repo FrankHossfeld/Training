@@ -17,6 +17,8 @@
   <source path='client'/>
   <source path='shared'/>
 
+  <servlet path="/person" class="de.gishmo.gwt.example.module0501.communication.server.PersonServiceImpl"/>
+
   <!-- allow Super Dev Mode -->
   <add-linker name="xsiframe"/>
 </module>

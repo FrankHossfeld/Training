@@ -39,12 +39,7 @@ public class TextField
   private void createWidget() {
     widgetPanel = new ResizeLayoutPanel();
     widgetPanel.addStyleName(style.widgetPanel());
-    widgetPanel.addResizeHandler(new ResizeHandler() {
-      @Override
-      public void onResize(ResizeEvent event) {
-        forceLayout();
-      }
-    });
+    widgetPanel.addResizeHandler(event -> forceLayout());
 
     panel = new FlowPanel();
     panel.addStyleName(style.panel());
@@ -67,8 +62,8 @@ public class TextField
       if (parent != null) {
         int parentWidth = parent.getOffsetWidth();
 
-        label.setWidth(Integer.toString(parentWidth - 48) + "px");
-        textBox.setWidth(Integer.toString(parentWidth - 48) + "px");
+        label.setWidth((parentWidth - 48) + "px");
+        textBox.setWidth((parentWidth - 48) + "px");
       }
     }
   }

@@ -9,20 +9,19 @@
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
 
-  <!-- Inherit the default GWT style sheet.  You can change       -->
-  <!-- the theme of your GWT application by uncommenting          -->
-  <!-- any one of the following lines.                            -->
-  <inherits name='com.google.gwt.user.theme.clean.Clean'/>
-  <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
-  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
-  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
-
   <!-- Other module inherits                                      -->
   <inherits name='com.mvp4g.Mvp4gModule'/>
 
   <inherits name="de.gishmo.gwt.example.module0503.ModulePerson" />
   <inherits name="de.gishmo.gwt.example.module0707.Module0707" />
+  
+  <inherits name='com.sencha.gxt.ui.GXT' />
+  <!-- Triton Theme -->
+  <inherits name="com.sencha.gxt.theme.triton.Theme" />
 
+  <!-- GXT Stylesheet -->
+  <stylesheet src="reset.css" />
+  
   <!-- Specify the app entry point class.                         -->
   <entry-point class='de.gishmo.gwt.example.module0810.client.Module0810'/>
 

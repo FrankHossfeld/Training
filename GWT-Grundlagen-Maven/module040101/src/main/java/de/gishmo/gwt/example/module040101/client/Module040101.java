@@ -43,6 +43,8 @@ public class Module040101 implements EntryPoint {
    */
   public void onModuleLoad() {
     final Button sendButton = new Button("Send");
+    final Button getAllButton = new Button("get all");
+    getAllButton.addClickHandler(e -> callGetAll());
     final TextBox idField = new TextBox();
     GWT.debugger();
     idField.setText("Please enter id");
@@ -55,6 +57,7 @@ public class Module040101 implements EntryPoint {
     // Use RootPanel.get() to get the entire body element
     RootPanel.get("nameFieldContainer").add(idField);
     RootPanel.get("sendButtonContainer").add(sendButton);
+    RootPanel.get("getAllButtonContainer").add(getAllButton);
     RootPanel.get("errorLabelContainer").add(errorLabel);
 
     // Focus the cursor on the name field when the app loads
@@ -151,8 +154,6 @@ public class Module040101 implements EntryPoint {
               throw caught;
             } catch (PersonNotFoundException e) {
               serverResponseLabel.setHTML(((PersonNotFoundException) caught).getMessage());
-            } catch (Exception e) {
-              serverResponseLabel.setHTML(SERVER_ERROR);
             } catch (Throwable e) {
               serverResponseLabel.setHTML(SERVER_ERROR);
             }
@@ -167,5 +168,9 @@ public class Module040101 implements EntryPoint {
     MyHandler handler = new MyHandler();
     sendButton.addClickHandler(handler);
     idField.addKeyUpHandler(handler);
+  }
+
+  private void callGetAll() {
+    // TODO Server call
   }
 }

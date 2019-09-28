@@ -41,23 +41,17 @@ public class ListPresenter
 
   private void bind() {
     clientContext.getEventBus().addHandler(ShowList.TYPE,
-                                           new ShowList.ShowListHandler() {
-      @Override
-      public void onShowList(ShowList event) {
-        searchPersons();
-        clientContext.getEventBus().fireEvent(new SetCenter(view.asWidget()));
-      }
-    });
+                                           event -> {
+                                             searchPersons();
+                                             clientContext.getEventBus().fireEvent(new SetCenter(view.asWidget()));
+                                           });
     
     clientContext.getEventBus().addHandler(SearchPersons.TYPE,
-                                           new SearchPersons.SearchPersonsHandler() {
-      @Override
-      public void onSearchPersons(SearchPersons event) {
-        search = new PersonSearch(event.getSearchName(), event.getSearchCity());
-        searchPersons();
-        clientContext.getEventBus().fireEvent(new SetCenter(view.asWidget()));
-      }
-    });
+                                           event -> {
+                                             search = new PersonSearch(event.getSearchName(), event.getSearchCity());
+                                             searchPersons();
+                                             clientContext.getEventBus().fireEvent(new SetCenter(view.asWidget()));
+                                           });
   }
   
   private void searchPersons() {

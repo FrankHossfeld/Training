@@ -4,7 +4,6 @@ import com.google.gwt.core.shared.GWT;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.web.bindery.event.shared.EventBus;
-
 import de.gishmo.gwt.example.module0503.client.PersonService;
 import de.gishmo.gwt.example.module0503.client.PersonServiceAsync;
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
@@ -14,15 +13,15 @@ public class ClientContext {
 
   private PersonServiceAsync service = GWT.create(PersonService.class);
   /* EventBus */
-  private EventBus        eventBus;
+  private EventBus eventBus;
   /* place controller */
   private PlaceController placeController;
   /* application */
-  private ApplicationCss  style;
+  private ApplicationCss style;
   /* searchs */
-  private PersonSearch    personSearch;
-  public ClientContext(EventBus eventBus,
-                       PlaceController placeController) {
+  private PersonSearch personSearch;
+
+  public ClientContext(EventBus eventBus, PlaceController placeController) {
     /* create Resources */
     Resources resources = GWT.create(Resources.class);
     this.style = resources.style();
@@ -32,13 +31,13 @@ public class ClientContext {
     this.placeController = placeController;
   }
 
-  //------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------
 
   public ApplicationCss getStyle() {
     return style;
   }
 
-  //------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------
 
   public EventBus getEventBus() {
     return eventBus;
@@ -60,11 +59,9 @@ public class ClientContext {
     this.personSearch = personSearch;
   }
 
-  public interface Resources
-    extends ClientBundle {
+  public interface Resources extends ClientBundle {
 
     @Source("resources/ApplicationCss.css")
     ApplicationCss style();
-
   }
 }

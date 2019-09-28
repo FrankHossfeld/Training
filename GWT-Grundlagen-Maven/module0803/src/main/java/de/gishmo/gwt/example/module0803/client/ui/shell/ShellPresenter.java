@@ -33,27 +33,11 @@ public class ShellPresenter
 
 //------------------------------------------------------------------------------
 
-  public void setNavigation(Widget widget) {
-    view.setNavigation(widget);
-  }
-
-//------------------------------------------------------------------------------
-
   private void bind() {
     clientContext.getEventBus().addHandler(SetNavigation.TYPE,
-                                           new SetNavigation.SetNavigationHandler() {
-      @Override
-      public void onSetNavigation(SetNavigation event) {
-        view.setNavigation(event.getWidget());
-      }
-    });
+                                           event -> view.setNavigation(event.getWidget()));
 
     clientContext.getEventBus().addHandler(SetCenter.TYPE,
-                                           new SetCenter.SetCenterHandler() {
-      @Override
-      public void onSetCenter(SetCenter event) {
-        view.setCenter(event.getWidget());
-      }
-    });
+                                           event -> view.setCenter(event.getWidget()));
   }
 }

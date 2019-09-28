@@ -118,6 +118,7 @@
             <arg>8888</arg>
             <arg>-codeServerPort</arg>
             <arg>9876</arg>
+            <arg>-strict</arg>
           </devmodeArgs>
           <startupUrls>
             <startupUrl>Module0710.html</startupUrl>

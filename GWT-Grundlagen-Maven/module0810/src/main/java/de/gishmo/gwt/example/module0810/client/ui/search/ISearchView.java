@@ -9,7 +9,7 @@ public interface ISearchView
   
   void setSearch(String searchName, String searchCity);
 
-  public interface Presenter {
+  interface Presenter {
 
     void doClickSearchButton(String searchName, String searchCity);
 

@@ -57,12 +57,7 @@ public class Module0702
 
 
     Anchor anchor = new Anchor("Panik");
-    anchor.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        Window.alert("Don't worry, be happy");
-      }
-    });
+    anchor.addClickHandler(event -> Window.alert("Don't worry, be happy"));
     RootPanel.get()
              .add(anchor);
   }

@@ -62,22 +62,19 @@ public class Application {
 
     parentView.add(shell);
 
-    GWT.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
-      @Override
-      public void onUncaughtException(Throwable e) {
-        while (e instanceof UmbrellaException) {
-          e = ((UmbrellaException) e).getCauses().iterator().next();
-        }
-
-        String message = e.getMessage();
-        if (message == null) {
-          message = e.toString();
-        }
-        log.log(Level.SEVERE,
-                "Uncaught exception",
-                e);
-        Window.alert("An unexpected error occurred: " + message);
+    GWT.setUncaughtExceptionHandler(e -> {
+      while (e instanceof UmbrellaException) {
+        e = ((UmbrellaException) e).getCauses().iterator().next();
       }
+
+      String message = e.getMessage();
+      if (message == null) {
+        message = e.toString();
+      }
+      log.log(Level.SEVERE,
+              "Uncaught exception",
+              e);
+      Window.alert("An unexpected error occurred: " + message);
     });
 
     initBrowserHistory(new SearchPlace("", ""));

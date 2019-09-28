@@ -22,7 +22,7 @@ public interface Module0810EventBus extends EventBus {
   @Start
   @Event(bind = { NavigationPresenter.class },
          handlers = ShellPresenter.class)
-  public void start();
+  void start();
  
   @Event(handlers = ShellPresenter.class)
   void setNavigation(Widget widget);
@@ -35,6 +35,7 @@ public interface Module0810EventBus extends EventBus {
   
   @Event(handlers = {DetailPresenter.class},
          historyConverter = DefaultHistoryConverter.class,
+         name = "R2D2",
          navigationEvent = true)
   void gotoDetail(long id);
   

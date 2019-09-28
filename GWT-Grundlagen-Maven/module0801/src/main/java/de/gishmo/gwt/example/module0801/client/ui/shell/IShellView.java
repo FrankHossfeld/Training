@@ -12,7 +12,7 @@ public interface IShellView
 
   void setNavigation(Widget widget);
 
-  public interface Presenter {
+  interface Presenter {
 
   }
 }

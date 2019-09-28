@@ -9,24 +9,23 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ScrollPanel;
-
 import de.gishmo.gwt.example.module0503.shared.dto.PersonSearch;
 import de.gishmo.gwt.example.module0708.client.widgets.ReverseComposite;
 import de.gishmo.gwt.example.module0708.client.widgets.form.TextField;
 import de.gishmo.gwt.example.module0901.client.resources.ApplicationConstants;
 import de.gishmo.gwt.example.module0901.client.resources.ApplicationCss;
 
-public class SearchView
-  extends ReverseComposite<ISearchView.Presenter>
-  implements ISearchView,
-             Editor<PersonSearch> {
+public class SearchView extends ReverseComposite<ISearchView.Presenter>
+    implements ISearchView, Editor<PersonSearch> {
 
   @Path("name")
   TextField searchName;
+
   @Path("city")
   TextField searchCity;
+
   private Driver driver;
-  private ScrollPanel    panel;
+  private ScrollPanel panel;
   private ApplicationCss style;
   private Button searchButton;
   private Button resetButton;
@@ -40,7 +39,7 @@ public class SearchView
     bind();
   }
 
-  //------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------
 
   @Override
   public void setSearch(PersonSearch search) {
@@ -48,31 +47,33 @@ public class SearchView
     driver.edit(search);
   }
 
-  //------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------
 
   private void bind() {
-    searchButton.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        /* transfer data from widgets to model */
-        getPresenter().doClickSearchButton(driver.flush());
-      }
-    });
+    searchButton.addClickHandler(
+        new ClickHandler() {
+          @Override
+          public void onClick(ClickEvent event) {
+            /* transfer data from widgets to model */
+            getPresenter().doClickSearchButton(driver.flush());
+          }
+        });
 
-    resetButton.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        searchName.setText("");
-        searchCity.setText("");
-      }
-    });
+    resetButton.addClickHandler(
+        new ClickHandler() {
+          @Override
+          public void onClick(ClickEvent event) {
+            searchName.setText("");
+            searchCity.setText("");
+          }
+        });
 
     /* Editor */
     driver = GWT.create(Driver.class);
     driver.initialize(this);
   }
 
-  //------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------
 
   private void createView() {
     panel = new ScrollPanel();
@@ -106,8 +107,5 @@ public class SearchView
     initWidget(panel);
   }
 
-  interface Driver
-    extends SimpleBeanEditorDriver<PersonSearch, SearchView> {
-  }
+  interface Driver extends SimpleBeanEditorDriver<PersonSearch, SearchView> {}
 }
-

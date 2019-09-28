@@ -35,11 +35,9 @@ public class SearchPresenter
 
   private void bind() {
     clientContext.getEventBus().addHandler(ShowSearch.TYPE,
-                                           new ShowSearch.ShowSearchHandler() {
-      @Override
-      public void onShowSearch(ShowSearch event) {
-        clientContext.getEventBus().fireEvent(new SetCenter(view.asWidget()));
-      }
-    });
+                                           event -> {
+                                             clientContext.getEventBus()
+                                                          .fireEvent(new SetCenter(view.asWidget()));
+                                           });
   }
 }
