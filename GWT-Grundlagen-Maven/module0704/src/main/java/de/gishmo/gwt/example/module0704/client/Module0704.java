@@ -27,12 +27,7 @@ public class Module0704
     // We can add style names to widgets
     showButton.addStyleName("sendButton");
 
-    showButton.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        dialogBox.center();
-      }
-    });
+    showButton.addClickHandler(event -> dialogBox.center());
 
     // Use RootPanel.get() to get the entire body element
     RootPanel.get()

@@ -15,7 +15,7 @@ public class module0910
    * This is the entry point method.
    */
   public void onModuleLoad() {
-    Mvp4gModule module = (Mvp4gModule) GWT.create(Mvp4gModule.class);
+    Mvp4gModule module = GWT.create(Mvp4gModule.class);
     module.createAndStartModule();
     RootLayoutPanel.get()
                    .add((Widget) module.getStartView());

@@ -40,7 +40,7 @@ public class Module0301 implements EntryPoint {
    * This is the entry point method.
    */
   public void onModuleLoad() {
-    final Button sendButton = new Button("Send");
+    final Button sendButton = new Button("Send To Server");
     final TextBox nameField = new TextBox();
     nameField.setText("GWT User");
     final Label errorLabel = new Label();

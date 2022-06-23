@@ -121,12 +121,7 @@ public class TextField
   public void onLoad() {
     super.onLoad();
     Scheduler.get()
-             .scheduleDeferred(new ScheduledCommand() {
-               @Override
-               public void execute() {
-                 forceLayout();
-               }
-             });
+             .scheduleDeferred(this::forceLayout);
   }
 
   public interface Resources

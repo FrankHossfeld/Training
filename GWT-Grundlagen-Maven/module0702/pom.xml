@@ -12,7 +12,8 @@
 
   <properties>
     <!-- Convenience property to set the GWT version -->
-    <gwtVersion>2.8.2</gwtVersion>
+    <elemental2.version>1.1.0</elemental2.version>
+    <gwtVersion>2.9.0</gwtVersion>
 
     <!-- GWT needs at least java 1.6 -->
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -57,6 +58,29 @@
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-servlet</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>com.google.elemental2</groupId>
+      <artifactId>elemental2-core</artifactId>
+      <version>${elemental2.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>jsinterop-annotations</artifactId>
+          <groupId>com.google.jsinterop</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.google.elemental2</groupId>
+      <artifactId>elemental2-dom</artifactId>
+      <version>${elemental2.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>jsinterop-annotations</artifactId>
+          <groupId>com.google.jsinterop</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
   </dependencies>
 
   <build>
@@ -80,7 +104,7 @@
       <plugin>
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <version>1.0-rc-9</version>
+        <version>1.0.1</version>
         <extensions>true</extensions>
         <executions>
           <execution>

@@ -339,7 +339,7 @@ public class Module0711
    *
    * @param <C> the cell type
    */
-  private static interface GetValue<C> {
+  private interface GetValue<C> {
     C getValue(Person person);
   }
 }

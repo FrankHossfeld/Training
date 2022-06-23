@@ -66,12 +66,7 @@ public class DetailView
 //------------------------------------------------------------------------------
 
   private void bind() {
-    saveButton.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        getPresenter().doUpdate();
-      }
-    });
+    saveButton.addClickHandler(event -> getPresenter().doUpdate());
     
     revertButton.addClickHandler(new ClickHandler() {
       @Override

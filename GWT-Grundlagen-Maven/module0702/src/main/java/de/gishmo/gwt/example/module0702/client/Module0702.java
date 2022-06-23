@@ -5,6 +5,8 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
+import elemental2.dom.DomGlobal;
+import jsinterop.base.Js;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -46,19 +48,21 @@ public class Module0702
     Button button = new Button("Drück mich!");
     button.setSize("200px",
                    "30px");
-    button.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        Window.alert("Ich wurde gedrückt!");
-      }
-    });
+    button.addClickHandler(event -> Window.alert("Ich wurde gedrückt!"));
+    SimplePanel sp = new SimplePanel();
+    sp.add(button);
     RootPanel.get()
-             .add(button);
+             .add(sp);
 
+    Js.debugger();
+    Window.alert("Test 01");
+    DomGlobal.window.alert("Test02");
 
     Anchor anchor = new Anchor("Panik");
     anchor.addClickHandler(event -> Window.alert("Don't worry, be happy"));
     RootPanel.get()
              .add(anchor);
+
+
   }
 }

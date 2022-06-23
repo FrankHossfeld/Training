@@ -7,7 +7,7 @@ public interface INavigationView
   extends ReverseView<INavigationView.Presenter>,
           IsWidget {
 
-  public interface Presenter {
+  interface Presenter {
 
     void doSetCenter(String newCenter);
 

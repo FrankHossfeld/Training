@@ -18,7 +18,7 @@ public interface module0910EventBus
 
   @Start
   @Event(bind = {NavigationPresenter.class}, handlers = ShellPresenter.class)
-  public void start();
+  void start();
 
   @Event(handlers = ShellPresenter.class)
   void setNavigation(Widget widget);

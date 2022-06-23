@@ -5,6 +5,7 @@ import com.google.gwt.editor.client.Editor;
 import com.google.gwt.editor.client.SimpleBeanEditorDriver;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
@@ -65,6 +66,10 @@ public class DetailView
     saveButton.addClickHandler(new ClickHandler() {
       @Override
       public void onClick(ClickEvent event) {
+        if (driver.isDirty()) {
+          Window.alert("Daten wurden bearbeitet!");
+          return;
+        }
         getPresenter().doUpdate(driver.flush());
       }
     });

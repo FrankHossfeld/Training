@@ -32,19 +32,9 @@ public class NavigationView
 //------------------------------------------------------------------------------
 
   private void bind() {
-    searchButton.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        getPresenter().doSetCenter(ClientContext.SEARCH_FORM);
-      }
-    });
+    searchButton.addClickHandler(event -> getPresenter().doSetCenter(ClientContext.SEARCH_FORM));
     
-    listButton.addClickHandler(new ClickHandler() {
-      @Override
-      public void onClick(ClickEvent event) {
-        getPresenter().doSetCenter(ClientContext.RESULT_LIST);
-      }
-    });
+    listButton.addClickHandler(event -> getPresenter().doSetCenter(ClientContext.RESULT_LIST));
 
   }
 
